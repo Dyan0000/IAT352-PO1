@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Home</title>
 		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/home.css">
 	</head>
 
@@ -48,23 +49,23 @@
 			<p class="right-align"><a href="menu.php" class="link">View all >></a></p>
 			<div class="container what-we-have">
 				<figure class="item">
-					<a href="menu.html"><img src="img/placeholder.png"></a>
+					<a href="menu.php"><img src="img/placeholder.png"></a>
 					<figcaption class="home-category">Salad</figcaption>
 				</figure>
 				<figure class="item">
-					<a href="menu.html"><img src="img/placeholder.png"></a>
+					<a href="menu.php"><img src="img/placeholder.png"></a>
 					<figcaption class="home-category">Ramen</figcaption>
 				</figure>
 				<figure class="item">
-					<a href="menu.html"><img src="img/placeholder.png"></a>
+					<a href="menu.php"><img src="img/placeholder.png"></a>
 					<figcaption class="home-category">Sashimi</figcaption>
 				</figure>
 				<figure class="item">
-					<a href="menu.html"><img src="img/placeholder.png"></a>
+					<a href="menu.php"><img src="img/placeholder.png"></a>
 					<figcaption class="home-category">Sushi</figcaption>
 				</figure>
 				<figure class="item">
-					<a href="menu.html"><img src="img/placeholder.png"></a>
+					<a href="menu.php"><img src="img/placeholder.png"></a>
 					<figcaption class="home-category">Tempera</figcaption>
 				</figure>
 			</div>
@@ -75,7 +76,10 @@
 			<h2>Who We Are</h2>
 			<div class="container who-we-are">
 				<p class="item">
-					Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+					Lorem ipsum is placeholder text commonly used in the graphic, print, 
+					and publishing industries for previewing layouts and visual mockups. 
+					Lorem ipsum is placeholder text commonly used in the graphic, print, 
+					and publishing industries for previewing layouts and visual mockups.
 				</p>
 				<img src="img/placeholder.png" alt="who we are" class="item">
 			</div>
@@ -86,10 +90,3 @@
 
 	</body>
 </html>
-
-
-
-
-
-
-

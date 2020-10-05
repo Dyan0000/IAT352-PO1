@@ -48,6 +48,7 @@ h2 {
 
 a {text-decoration: none;}
 a.link {
+	cursor: pointer;
 	text-decoration: underline;
 	color: #231F20;
 }
@@ -134,9 +135,11 @@ img.banner {
 	background-color: #EE3324;
 }
 
+
 /* Home-page specific */
 .popular div,
-.what-we-have figure {
+.what-we-have figure,
+.favourite div {
 	margin: 0;
 	padding-right: 1.5em;
 }
@@ -153,14 +156,70 @@ img.banner {
 	max-width: 50%;
 }
 
-
-
-
-
-
-
-
-
+/* Profile-page specific */
+.profile-page-content {margin: 0 10%;}
+.account {
+	-webkit-justify-content: space-between;
+	-ms-justify-content: space-between;
+	justify-content: space-between;
+}
+.account-img, .account-info, .account .btn {
+	margin: 1em 0;
+}
+.account-img {
+	width: 8em;
+	height: 8em;
+	border: none;
+	border-radius: 50%;
+}
+.account-info {
+	margin-right: auto;
+	margin-left: 4em;
+}
+.account-info p {margin: 0;}
+.account-info .name {
+	margin: 0;
+	font-weight: 500;
+}
+.account-info .points {
+	margin-top: 1.375em;
+	font-size: 1.375em;
+	font-weight: 500;
+}
+.account .btn {
+	width: 20em;
+	-webkit-align-self: flex-end;
+	-ms-align-self: flex-end;
+	align-self: flex-end;
+}
+.favourite div:nth-child(6) {
+	padding-right: 0;
+}
+.past-orders {margin-bottom: 9em;}
+.past-order-box {
+	border: 1px #231F20 solid;
+	border-radius: 4px;
+	padding: 1.5em 2em;
+	-webkit-justify-content: space-between;
+	-ms-justify-content: space-between;
+	justify-content: space-between;
+}
+.past-order-box .btn {
+	width: 15em;
+	margin-bottom: 3.5em;
+}
+.past-order-box .order-item {
+	margin: .875em 0;
+}
+.past-order-box .order-number {
+	border: 1px #231F20 solid;
+	border-radius: 4px;
+	padding: .2em .5em;
+	height: 1.5em;
+	margin-right: 1em;
+}
+.past-order-box .right-align {margin: 0;}
+.past-order-box h3 {margin-top: 0;}
 
 
 
