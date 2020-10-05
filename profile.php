@@ -15,12 +15,12 @@
 			<img src="img/placeholder.png" alt="logo" class="logo">
 			<nav>
 				<ul class="nav_links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="menus.html">Menu</a></li>
-					<li><a href="cart.html">Cart</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="menus.php">Menu</a></li>
+					<li><a href="#">Cart</a></li>
 				</ul>
 			</nav>
-			<a href="home.html" class="sign-in">Sign out</a>
+			<a href="index.php" class="sign-in">Sign out</a>
 		</header>
 
 		<!-- Page Content -->
