@@ -1,0 +1,80 @@
+/*This is the styleguide for the restaurant website.*/
+/*DO NOT include page layout here */
+
+
+/*Typography*/
+
+body{
+	font-family: 'Roboto', sans-serif;
+}
+
+.heading1{
+	font-weight: 500;
+	font-size: 2rem;
+	color:#231F20;
+}
+
+.heading2{
+	font-weight: 400;
+	font-size:1.5rem;
+	color:#231F20;
+}
+
+/*for more than 4 lines of text*/
+.text-body-lg{
+	font-size: 1rem;
+	line-height: 28px;
+	color:#4F4C4D;
+}
+
+/*for 1-3 lines of text*/
+.text-body-sml{ 
+	font-size: 1rem;
+	line-height: 20px;
+	color:#4F4C4D;
+}
+
+
+
+/*Modular Elements*/
+
+
+/*Primary button*/
+
+.pr_bt{
+	background-color: #231F20;
+	font-size:1rem;
+	color:#fff;
+	font-weight: 500;
+	display: block;
+	padding: 1em;
+	text-align: center;
+	border: none;
+	border-radius: 2px;
+	transition: all .5s ease;
+}
+
+.pr_bt:hover, .pr_bt:active, .pr_bt:focus{
+	background-color: #EE3324;
+}
+
+
+/*Secondary button*/
+
+/*link button*/
+
+.link_bt{
+	font-size:1rem;
+	color:#231F20;
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
