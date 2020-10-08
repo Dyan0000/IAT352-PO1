@@ -17,7 +17,7 @@
 			<nav>
 				<ul class="nav_links">
 					<li><a href="index.php">Home</a></li>
-					<li><a href="menus.php">Menu</a></li>
+					<li><a href="browse.php">Menu</a></li>
 					<li><a href="#">Cart</a></li>
 				</ul>
 			</nav>

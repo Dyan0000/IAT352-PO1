@@ -17,7 +17,7 @@
 			<nav>
 				<ul class="nav_links">
 					<li><a href="index.php">Home</a></li>
-					<li><a href="menus.php">Menu</a></li>
+					<li><a href="browse.php">Menu</a></li>
 					<li><a href="#">Cart</a></li>
 				</ul>
 			</nav>
@@ -29,7 +29,7 @@
 			<img src="img/placeholder.png" alt="banner" class="banner">
 			<div class="banner-content">
 				<h1>Lorem Ipsum</h1>
-				<a href="menu.php" role="button" class="btn">Order Now</a>
+				<a href="browse.php" role="button" class="btn">Order Now</a>
 			</div>
 		</section>
 
@@ -46,26 +46,26 @@
 		<!-- What We Have -->
 		<section>
 			<h2>What We Have</h2>
-			<p class="right-align"><a href="menu.php" class="link">View all >></a></p>
+			<p class="right-align"><a href="browse.php" class="link">View all >></a></p>
 			<div class="container what-we-have">
 				<figure class="item">
-					<a href="menu.php"><img src="img/placeholder.png"></a>
+					<a href="browse.php"><img src="img/placeholder.png"></a>
 					<figcaption class="home-category">Salad</figcaption>
 				</figure>
 				<figure class="item">
-					<a href="menu.php"><img src="img/placeholder.png"></a>
+					<a href="browse.php"><img src="img/placeholder.png"></a>
 					<figcaption class="home-category">Ramen</figcaption>
 				</figure>
 				<figure class="item">
-					<a href="menu.php"><img src="img/placeholder.png"></a>
+					<a href="browse.php"><img src="img/placeholder.png"></a>
 					<figcaption class="home-category">Sashimi</figcaption>
 				</figure>
 				<figure class="item">
-					<a href="menu.php"><img src="img/placeholder.png"></a>
+					<a href="browse.php"><img src="img/placeholder.png"></a>
 					<figcaption class="home-category">Sushi</figcaption>
 				</figure>
 				<figure class="item">
-					<a href="menu.php"><img src="img/placeholder.png"></a>
+					<a href="browse.php"><img src="img/placeholder.png"></a>
 					<figcaption class="home-category">Tempera</figcaption>
 				</figure>
 			</div>
