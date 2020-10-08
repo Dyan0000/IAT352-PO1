@@ -6,6 +6,7 @@
 		<title>Home</title>
 		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
 		<link rel="stylesheet" type="text/css" href="css/home.css">
 	</head>
 
@@ -26,7 +27,7 @@
 
 		<!-- Banner Image -->
 		<section class="banner-container">
-			<img src="img/placeholder.png" alt="banner" class="banner">
+			<img src="img/banner.jpg" alt="banner" class="banner">
 			<div class="banner-content">
 				<h1>Lorem Ipsum</h1>
 				<a href="browse.php" role="button" class="btn">Order Now</a>
@@ -81,12 +82,22 @@
 					Lorem ipsum is placeholder text commonly used in the graphic, print, 
 					and publishing industries for previewing layouts and visual mockups.
 				</p>
-				<img src="img/placeholder.png" alt="who we are" class="item">
+				<img src="img/who-we-are-1.jpg" alt="who we are" class="item">
+			</div>
+			<div class="container who-we-are">
+				<img src="img/who-we-are-2.jpg" alt="who we are" class="item">
+				<p class="item">
+					Lorem ipsum is placeholder text commonly used in the graphic, print, 
+					and publishing industries for previewing layouts and visual mockups. 
+					Lorem ipsum is placeholder text commonly used in the graphic, print, 
+					and publishing industries for previewing layouts and visual mockups.
+				</p>
 			</div>
 		</section>
 
 		<!-- Footer -->
-		<footer></footer>
+		<footer>
+		</footer>
 
 	</body>
 </html>
