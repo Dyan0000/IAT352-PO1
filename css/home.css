@@ -1,31 +1,3 @@
-*, *::before, *::after {
-	box-sizing: border-box;
-}
-
-.container {
-	display: -webkit-flex; /* For support in a series of Webkit browsers */
-	display: -ms-flex; /* For support in IE 10 */
-	display: flex;
-
-	-webkit-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-
-	-webkit-justify-content: space-evenly;
-	-ms-justify-content: space-evenly;
-	justify-content: space-evenly;
-
-	-webkit-align-items: center;
-	-ms-align-items: center;
-	align-items: center;
-}
-
-.item {
-	-webkit-flex: 1 1 0;
-	-ms-flex: 1 1 0;
-	flex: 1 1 0;
-}
-
 /* Text Styles */
 body {
 	font-family: 'Roboto', sans-serif;
@@ -63,43 +35,6 @@ img {width: 100%;}
 /* Layout Margins */
 section {margin: 9em 5.5em 0 5.5em;}
 footer {margin-top: 9em;}
-
-/* Header - Navigation Bar */
-header {
-	background-color: #231F20;
-	color: white;
-	margin: 0;
-	padding: .5em 1em;
-	overflow: hidden;
-}
-header a {color: white;}
-img.logo {
-	cursor: pointer;
-	width: 4em;
-	margin-right: auto;
-}
-.nav_links li {
-	cursor: pointer;
-	display: inline-block;
-	padding: 0 2em;
-	position: relative;
-}
-.sign-in {
-	padding: 0 5em;
-}
-.nav_links li::after {
-	position: absolute;
-	content: ' ';
-	background-color: #EE3324;
-	bottom: -1.5em;
-	left: 0;
-	width: 0;
-	height: .3em;
-	transition: all .2s ease;
-}
-.nav_links li:hover::after {
-	width: 100%;
-}
 
 /* Banner Image */
 .banner-container {
@@ -150,7 +85,7 @@ img.banner {
 .who-we-are p {
 	margin: 0;
 	max-width: 37.5em;
-	padding-right: 4em;
+	padding: 4em;
 }
 .who-we-are img {
 	max-width: 50%;
@@ -167,8 +102,8 @@ img.banner {
 	margin: 1em 0;
 }
 .account-img {
-	width: 8em;
-	height: 8em;
+	width: 9em;
+	height: 9em;
 	border: none;
 	border-radius: 50%;
 }
@@ -192,8 +127,14 @@ img.banner {
 	-ms-align-self: flex-end;
 	align-self: flex-end;
 }
-.favourite div:nth-child(6) {
+.favourite div:nth-child(3) {
 	padding-right: 0;
+}
+.favourite .item {
+	width: 35em;
+	height: 35em;
+	overflow: hidden;
+	padding-bottom: 1.5em;
 }
 .past-orders {margin-bottom: 9em;}
 .past-order-box {
