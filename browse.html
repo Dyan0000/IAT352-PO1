@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/browse.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>Browse</title>
+</head>
+<body>
+
+			<!-- Navigation Bar -->
+	<header class="container">
+		<img src="img/placeholder.png" alt="logo" class="logo">
+		<nav>
+			<ul class="nav_links">
+				<li><a href="index.php">Home</a></li>
+				<li><a href="menus.php">Menu</a></li>
+				<li><a href="#">Cart</a></li>
+			</ul>
+		</nav>
+		<a href="sign-in.php" class="sign-in">Sign in</a>
+	</header>
+
+	<section class="browse_layout">
+		<section class="browse_categories">
+
+			<div class="container">
+
+				<div class="container_item">
+					<div class="categories_img">
+						<img src="img/square-placeholder.jpg">
+					</div>
+					
+					<div class="categories_label">
+						<p>Appetizer</p>
+					</div>
+					
+				</div>
+		
+
+			
+
+				<div class="container_item">
+					<div class="categories_img">
+						<img src="img/square-placeholder.jpg">
+					</div>
+					
+					<div class="categories_label">
+						<p>Salad</p>
+					</div>
+					
+				</div>
+			
+
+		
+				<div class="container_item">
+					<div class="categories_img">
+						<img src="img/square-placeholder.jpg">
+					</div>
+					
+					<div class="categories_label">
+						<p>Ramen</p>
+					</div>
+					
+				</div>
+
+				<div class="container_item">
+					<div class="categories_img">
+						<img src="img/square-placeholder.jpg">
+					</div>
+					
+					<div class="categories_label">
+						<p>Sashimi</p>
+					</div>
+					
+				</div>
+
+				<div class="container_item">
+					<div class="categories_img">
+						<img src="img/square-placeholder.jpg">
+					</div>
+					
+					<div class="categories_label">
+						<p>Nigiri</p>
+					</div>
+					
+				</div>
+
+				<div class="container_item">
+					<div class="categories_img">
+						<img src="img/square-placeholder.jpg">
+					</div>
+					
+					<div class="categories_label">
+						<p>Tempura</p>
+					</div>
+					
+				</div>
+
+				<div class="container_item">
+					<div class="categories_img">
+						<img src="img/square-placeholder.jpg">
+					</div>
+					
+					<div class="categories_label">
+						<p>Drinks</p>
+					</div>
+					
+				</div>
+
+				<div class="container_item">
+					<div class="categories_img">
+						<img src="img/square-placeholder.jpg">
+					</div>
+					
+					<div class="categories_label">
+						<p>Deserts</p>
+					</div>
+					
+				</div>
+			
+			
+
+		</section>
+
+		<section class="main">
+
+			<div class="filter_section col-1-3">
+
+				<h1 class="heading2">Sort by</h1>
+
+				<div class="slider">
+					<h2>Price Range</h2>
+					<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+
+				</div>
+
+				<div class="ratings">
+					<h2>Ratings</h2>
+
+					<label>
+						<input type="radio" name="filter" value="*" >Show all
+					</label>
+
+					<label>
+						<input type="radio" name="filter" value="gluten-free">Gluten-free
+					</label>
+
+					<label>
+						<input type="radio" name="filter" value="vegeterian">Vegeterian
+					</label>
+
+					<label>
+						<input type="radio" name="filter" value="no-soy">No soy
+					</label>
+
+					<label>
+						<input type="radio" name="filter" value="no-peanut">No peanut
+					</label>
+
+				</div>
+
+				<div class="dietary">
+					<h2>Dietary</h2>
+
+					<label>
+						<input type="radio" name="filter" value="*" checked="checked">Show all
+					</label>
+
+					<label>
+						<input type="radio" name="filter" value="gluten-free">Gluten-free
+					</label>
+
+					<label>
+						<input type="radio" name="filter" value="vegeterian">Vegeterian
+					</label>
+
+					<label>
+						<input type="radio" name="filter" value="no-soy">No soy
+					</label>
+
+					<label>
+						<input type="radio" name="filter" value="no-peanut">No peanut
+					</label>
+
+				</div>
+				
+			</div>
+
+			<div class="menu_section col-2-3">
+
+				<div class="list_title">
+						<h1 class="heading2">Appetizer</h1>
+					</div>
+					
+
+				<div class="menu_list grid">
+
+					
+
+					<div id="menuItem" class="menu_item">
+
+						<div class="item_image">
+							<img src="img/square-placeholder.jpg" alt="food image">
+						</div>
+
+						<div class="item_text">
+							<div class="item_name">Sunomono</div>
+							<div class="item_description">Lorem ipsum this is Sunomono</div>
+							<div class="item_price">$4.99</div>
+						</div>
+	
+					</div>
+
+					<div id="menuItem" class="menu_item">
+
+						<div class="item_image">
+							<img src="img/square-placeholder.jpg" alt="food image">
+						</div>
+
+						<div class="item_text">
+							<div class="item_name">Gyoza</div>
+							<div class="item_description">Lorem ipsum this is Gyoza</div>
+							<div class="item_price">$6.99</div>
+						</div>
+	
+					</div>
+
+					<div id="menuItem" class="menu_item">
+
+						<div class="item_image">
+							<img src="img/square-placeholder.jpg" alt="food image">
+						</div>
+
+						<div class="item_text">
+							<div class="item_name">Edamame</div>
+							<div class="item_description">Lorem ipsum this is Edamame</div>
+							<div class="item_price">$2.99</div>
+						</div>
+	
+					</div>
+
+					<div id="menuItem" class="menu_item">
+
+						<div class="item_image">
+							<img src="img/square-placeholder.jpg" alt="food image">
+						</div>
+
+						<div class="item_text">
+							<div class="item_name">Sunomono</div>
+							<div class="item_description">Lorem ipsum this is sunomono</div>
+							<div class="item_price">$4.99</div>
+						</div>
+	
+					</div>
+
+				</div>
+				
+			</div>
+			
+
+		</section>
+
+	</section>
+
+
+	<!-- menu item popup modal -->
+
+	<!-- overlay -->
+
+	<div id ="overlay" class="overlay"></div>
+
+	<div id="itemModal" class="item_modal">
+
+		<!-- modal content -->
+
+		<div class="modal_content">
+
+			<span class="close">&times;</span>
+			
+			<div class="modal_image">
+				<img src="img/placeholder.png">
+			</div>
+
+			<div class="modal_body">
+				<div class="modal_title">Sunomono</div>
+				<div class="modal_description"></div>
+			</div>
+
+		</div>
+
+
+	</div>
+
+	
+	<script type="text/javascript">
+		// get overlay
+
+		var overlay = document.getElementById("overlay");
+
+		// get modal
+		var modal = document.getElementById("itemModal");
+
+		// menu item as trigger
+		var menuItem = document.getElementsByClassName("menu_item");
+
+		// close the modal
+
+		var x_button = document.getElementsByClassName("close")[0];
+
+		// when user clicks menu item
+
+		menuItem.onclick = function(){
+			overlay.style.display = "block";
+			modal.style.display = "block";
+		}
+
+		// when user clicks close button
+
+		x_button.onclick = function(){
+			overlay.style.display = "none";
+			modal.style.display = "none";
+		}
+
+		// when user clicks outside of the modal
+		overlay.onclick = function(event){
+			if(event.target == overlay){
+				overlay.style.display = "none";
+				modal.style.display = "none";
+			}
+		}
+
+	</script>
+
+		
+
+
+</body>
+</html>
