@@ -5,13 +5,13 @@
   <title> Sign-Up/Login </title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./signUp.css">
+  <link rel="stylesheet" href="css/signUp.css">
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <div class="form">
-      <img src="img/logo.png" alt="logo" class="logo">   
+      <img src="img/logo-b.png" alt="logo" class="logo">   
       
       <!-- <ul class="tab-group"> -->
         <!-- <li class="tab active"><a href="#signup">Sign Up</a></li> -->
@@ -59,9 +59,9 @@
 
         </div>
         
-        <div id="login">   
+        <div id="login">  
           
-          <form action="/" method="post">
+          <form action="profile.php" method="post">
           
             <div class="field-wrap">
             <label>
@@ -89,7 +89,8 @@
       
 </div> <!-- /form -->
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="js/script.js"></script>
 
 </body>
 </html>

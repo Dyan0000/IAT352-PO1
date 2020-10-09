@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en">
+<head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -8,13 +8,13 @@
 	<link rel="stylesheet" type="text/css" href="css/browse.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<title>Browse</title>
+	<title>Menu</title>
 </head>
 <body>
 
 			<!-- Navigation Bar -->
 	<header class="container">
-		<img src="img/logo-w.png" alt="logo" class="logo">
+		<a href="index.php" class="logo"><img src="img/logo-w.png" alt="logo"></a>
 		<nav>
 			<ul class="nav_links">
 				<li><a href="index.php">Home</a></li>
@@ -22,7 +22,7 @@
 				<li><a href="#">Cart</a></li>
 			</ul>
 		</nav>
-		<a href="P01-SignUp/signUp.php" class="sign-in">Sign in</a>
+		<a href="signUp.php" class="sign-in">Sign up</a>
 	</header>
 
 	<section class="browse_layout">

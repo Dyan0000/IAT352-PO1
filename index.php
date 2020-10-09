@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
 					<li><a href="#">Cart</a></li>
 				</ul>
 			</nav>
-			<a href="P01-SignUp/signUp.php" class="sign-in">Sign in</a>
+			<a href="signUp.php" class="sign-in">Sign up</a>
 		</header>
 
 		<!-- Banner Image -->
