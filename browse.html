@@ -28,7 +28,7 @@
 	<section class="browse_layout">
 		<section class="browse_categories">
 
-			<div class="container">
+			<div class="categories_container container">
 
 				<div class="container_item">
 					<div class="categories_img">
@@ -107,7 +107,7 @@
 					</div>
 					
 					<div class="categories_label">
-						<p>Drinks</p>
+						<p>Teriyaki</p>
 					</div>
 					
 				</div>
@@ -118,7 +118,7 @@
 					</div>
 					
 					<div class="categories_label">
-						<p>Deserts</p>
+						<p>Drinks</p>
 					</div>
 					
 				</div>
@@ -133,58 +133,85 @@
 
 				<h1 class="heading2">Sort by</h1>
 
-				<div class="slider">
-					<h2>Price Range</h2>
-					<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+				<div class="price_range">
+					<h2 class="filter_title">Price Range</h2>
+
+					<label>
+						<input type="radio" name="price_filter" value="*" checked="checked">All
+					</label>
+
+					<label>
+						<input type="radio" name="price_filter" value="*">&#36;0-&#36;5
+					</label>
+
+					<label>
+						<input type="radio" name="price_filter" value="*">&#36;5-&#36;10
+					</label>
+
+					<label>
+						<input type="radio" name="price_filter" value="*">&#36;10-&#36;15
+					</label>
+
+					<label>
+						<input type="radio" name="price_filter" value="*">&#36;15-&#36;20
+					</label>
+
+					<label>
+						<input type="radio" name="price_filter" value="*">&#36;20+
+					</label>
+
+
+					
 
 				</div>
 
 				<div class="ratings">
-					<h2>Ratings</h2>
+					<h2 class="filter_title">Ratings</h2>
 
 					<label>
-						<input type="radio" name="filter" value="*" >Show all
+						<input type="radio" name="rating_filter" value="*" checked="checked">Any
+					</label>
+
+
+					<label>
+						<input type="radio" name="rating_filter" value="gluten-free">&#10029;&#10029;&#10025;&#10025;&#10025;
 					</label>
 
 					<label>
-						<input type="radio" name="filter" value="gluten-free">Gluten-free
+						<input type="radio" name="rating_filter" value="vegeterian">&#10029;&#10029;&#10029;&#10025;&#10025;
 					</label>
 
 					<label>
-						<input type="radio" name="filter" value="vegeterian">Vegeterian
+						<input type="radio" name="rating_filter" value="no-soy">&#10029;&#10029;&#10029;&#10029;&#10025;
 					</label>
 
 					<label>
-						<input type="radio" name="filter" value="no-soy">No soy
-					</label>
-
-					<label>
-						<input type="radio" name="filter" value="no-peanut">No peanut
+						<input type="radio" name="rating_filter" value="no-peanut">&#10029;&#10029;&#10029;&#10029;&#10029;
 					</label>
 
 				</div>
 
 				<div class="dietary">
-					<h2>Dietary</h2>
+					<h2 class="filter_title">Dietary</h2>
 
 					<label>
-						<input type="radio" name="filter" value="*" checked="checked">Show all
+						<input type="radio" name="diet_filter" value="*" checked="checked">All
 					</label>
 
 					<label>
-						<input type="radio" name="filter" value="gluten-free">Gluten-free
+						<input type="radio" name="diet_filter" value="gluten-free">Gluten-free
 					</label>
 
 					<label>
-						<input type="radio" name="filter" value="vegeterian">Vegeterian
+						<input type="radio" name="diet_filter" value="vegeterian">Vegeterian
 					</label>
 
 					<label>
-						<input type="radio" name="filter" value="no-soy">No soy
+						<input type="radio" name="diet_filter" value="no-soy">No soy
 					</label>
 
 					<label>
-						<input type="radio" name="filter" value="no-peanut">No peanut
+						<input type="radio" name="diet_filter" value="no-peanut">No peanut
 					</label>
 
 				</div>
@@ -205,12 +232,12 @@
 					<div id="menuItem" class="menu_item">
 
 						<div class="item_image">
-							<img src="img/square-placeholder.jpg" alt="food image">
+							<img src="img/starters/tomato-kimchi.jpeg" alt="food image">
 						</div>
 
 						<div class="item_text">
-							<div class="item_name">Sunomono</div>
-							<div class="item_description">Lorem ipsum this is Sunomono</div>
+							<div class="item_name">Tomato Kimchi</div>
+							<div class="item_description text-body-sml">Sweet and spicy tomato salad</div>
 							<div class="item_price">$4.99</div>
 						</div>
 	
@@ -219,12 +246,12 @@
 					<div id="menuItem" class="menu_item">
 
 						<div class="item_image">
-							<img src="img/square-placeholder.jpg" alt="food image">
+							<img src="img/starters/spicy-gyoza.jpeg" alt="food image">
 						</div>
 
 						<div class="item_text">
-							<div class="item_name">Gyoza</div>
-							<div class="item_description">Lorem ipsum this is Gyoza</div>
+							<div class="item_name">Spicy Gyoza</div>
+							<div class="item_description text-body-sml">Deep fried gyoza mixed with greens feat Korean style spicy sauce.</div>
 							<div class="item_price">$6.99</div>
 						</div>
 	
@@ -233,12 +260,12 @@
 					<div id="menuItem" class="menu_item">
 
 						<div class="item_image">
-							<img src="img/square-placeholder.jpg" alt="food image">
+							<img src="img/starters/edamame.jpeg" alt="food image">
 						</div>
 
 						<div class="item_text">
 							<div class="item_name">Edamame</div>
-							<div class="item_description">Lorem ipsum this is Edamame</div>
+							<div class="item_description text-body-sml">Steamed and seasoned with salt</div>
 							<div class="item_price">$2.99</div>
 						</div>
 	
@@ -247,13 +274,13 @@
 					<div id="menuItem" class="menu_item">
 
 						<div class="item_image">
-							<img src="img/square-placeholder.jpg" alt="food image">
+							<img src="img//starters/tako-yaki.jpeg" alt="food image">
 						</div>
 
 						<div class="item_text">
-							<div class="item_name">Sunomono</div>
-							<div class="item_description">Lorem ipsum this is sunomono</div>
-							<div class="item_price">$4.99</div>
+							<div class="item_name">Takoyaki</div>
+							<div class="item_description text-body-sml">Filled with diced octopus, tempura scraps, pickled ginger, and green onion.</div>
+							<div class="item_price">$7.99</div>
 						</div>
 	
 					</div>
@@ -282,13 +309,20 @@
 
 			<span class="close">&times;</span>
 			
-			<div class="modal_image">
-				<img src="img/placeholder.png">
-			</div>
+		
+			<img class="modal_image" src="img/placeholder.png">
+			
 
 			<div class="modal_body">
-				<div class="modal_title">Sunomono</div>
-				<div class="modal_description"></div>
+				<div class="modal_title"></div>
+				<div class="modal_description text-body-sml"></div>
+				<div class="modal_price"></div>
+			</div>
+
+			<div class="modal_control">
+				
+				<div class="quantity_stepper"></div>
+				<div class="order_bt pr_bt">Order</div>
 			</div>
 
 		</div>
@@ -298,41 +332,87 @@
 
 	
 	<script type="text/javascript">
-		// get overlay
 
-		var overlay = document.getElementById("overlay");
 
-		// get modal
-		var modal = document.getElementById("itemModal");
+		// modal content
 
-		// menu item as trigger
-		var menuItem = document.getElementsByClassName("menu_item");
+		$(".menu_item").click(function(){
+			  $(".item_modal").find(".modal_title").text($(this).find(".item_name").text());
+  			  $(".item_modal").find(".modal_description").text($(this).find(".item_description").text());
+  			  $(".item_modal").find(".modal_price").text($(this).find(".item_price").text());
+			  $(".item_modal").find(".modal_image").attr("src", $(this).find(".item_image img").attr("src"));
 
-		// close the modal
 
-		var x_button = document.getElementsByClassName("close")[0];
+			  $(".overlay").show();
+			  $(".item_modal").show();
+		});
 
-		// when user clicks menu item
+		$(".close").click(function(){
+		 $(".overlay").hide();
+ 		 $(".item_modal").hide();//Hide pop up
 
-		menuItem.onclick = function(){
-			overlay.style.display = "block";
-			modal.style.display = "block";
-		}
+});
 
-		// when user clicks close button
 
-		x_button.onclick = function(){
-			overlay.style.display = "none";
-			modal.style.display = "none";
-		}
 
-		// when user clicks outside of the modal
-		overlay.onclick = function(event){
-			if(event.target == overlay){
-				overlay.style.display = "none";
-				modal.style.display = "none";
-			}
-		}
+
+
+
+
+
+
+
+
+		// // get overlay
+
+		// var overlay = document.getElementById("overlay");
+
+		// // get modal
+		// var modal = document.getElementById("itemModal");
+
+		// // menu item as trigger
+		// var menuItem = document.getElementsByClassName("menu_item")[0];
+		// var menuItem1 = document.getElementsByClassName("menu_item")[1];
+		// var menuItem2 = document.getElementsByClassName("menu_item")[2];
+		// var menuItem3 = document.getElementsByClassName("menu_item")[3];
+
+		// // close the modal
+
+		// var x_button = document.getElementsByClassName("close")[0];
+
+		// // when user clicks menu item
+
+		// menuItem.onclick = function(){
+		// 	overlay.style.display = "block";
+		// 	modal.style.display = "block";
+		// }
+		// menuItem1.onclick = function(){
+		// 	overlay.style.display = "block";
+		// 	modal.style.display = "block";
+		// }
+		// menuItem2.onclick = function(){
+		// 	overlay.style.display = "block";
+		// 	modal.style.display = "block";
+		// }
+		// menuItem3.onclick = function(){
+		// 	overlay.style.display = "block";
+		// 	modal.style.display = "block";
+		// }
+
+		// // when user clicks close button
+
+		// x_button.onclick = function(){
+		// 	overlay.style.display = "none";
+		// 	modal.style.display = "none";
+		// }
+
+		// // when user clicks outside of the modal
+		// overlay.onclick = function(event){
+		// 	if(event.target == overlay){
+		// 		overlay.style.display = "none";
+		// 		modal.style.display = "none";
+		// 	}
+		// }
 
 	</script>
 
