@@ -22,7 +22,7 @@
 				<li><a href="#">Cart</a></li>
 			</ul>
 		</nav>
-		<a href="P01-SignUp/signUp.html" class="sign-in">Sign in</a>
+		<a href="P01-SignUp/signUp.php" class="sign-in">Sign in</a>
 	</header>
 
 	<section class="browse_layout">
