@@ -22,15 +22,19 @@ a:hover {
   color: #EE3324;
 }
 
+.logo{
+  max-width: 100%;
+  padding-bottom: 5%;
+}
 .form {
   background: #231F20;
   padding: 40px;
-  max-width: 600px;
+  max-width: 500px;
   margin: 40px auto;
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
-
+.signin {color: white;}
 .tab-group {
   list-style: none;
   padding: 0;
@@ -132,7 +136,7 @@ textarea {
 
 .field-wrap {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .top-row:after {
@@ -154,9 +158,8 @@ textarea {
   outline: none;
   border-radius: 0;
   padding: 15px 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: .1em;
   background: #EE3324;
   color: #ffffff;
