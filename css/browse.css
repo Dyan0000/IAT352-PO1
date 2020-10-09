@@ -100,7 +100,9 @@ img.logo {
 	width: 100%;
 }
 
-
+.categories_container{
+	margin-bottom: 32px;
+}
 
 
 .container_item{
@@ -114,11 +116,19 @@ img.logo {
 	cursor: pointer;
 
 
+
+}
+
+.categories_img img{
+	/*background-color:#f7f7f7;
+
+	border-radius: 4px;*/
+	
 }
 
 .categories_label p{
 	text-align: center;
-	margin-top:0.5em;
+	margin-top:0em;
 }
 
 
@@ -176,10 +186,12 @@ img.logo {
 
 .menu_list{
 	grid-template-columns: repeat(2, 1fr);
+	margin-bottom:4em;
 }
 
 .list_title{
 	display: block;
+
 }
 
 .grid{
