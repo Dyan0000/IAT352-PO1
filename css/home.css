@@ -126,6 +126,30 @@ img.banner {
 .past-order-box .right-align {margin: 0;}
 .past-order-box h3 {margin-top: 0;}
 
+/* Manage-Account page specific */
+form.change-form {
+	background-color: #efefef;
+	padding: 2em;
+}
+form.change-form label {
+	display: block;
+	margin-bottom: .75em;
+}
+form.change-form input {
+	/*padding: .25em .5em;*/
+}
+input.btn {
+	width: 15em;
+	margin-top: .75em;
+	margin-left: auto;
+	margin-right: 0;
+	font-size: 1rem;
+}
+p.error {
+	color: #EE3324;
+	font-style: italic;
+}
+
 
 
 

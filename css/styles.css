@@ -95,9 +95,9 @@ header a {color: white;}
 	padding: 0 2em;
 	position: relative;
 }
-.sign-in {
-	padding: 0 5em;
-}
+/*.sign-in {
+	margin: 0 5em;
+}*/
 .nav_links li::after {
 	position: absolute;
 	content: ' ';

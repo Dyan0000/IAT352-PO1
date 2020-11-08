@@ -1,6 +1,6 @@
-<?php
-//include auth.php file on all secure pages
-include("auth_sessionNotActiveCheck.php");
+<?php	
+	// include auth.php file on all secure pages
+	include("auth_sessionNotActiveCheck.php");
 ?>
 
 
@@ -26,9 +26,9 @@ include("auth_sessionNotActiveCheck.php");
 					<li><a href="index.php">Home</a></li>
 					<li><a href="browse.php">Menu</a></li>
 					<li><a href="#">Cart</a></li>
+					<li><a href="logout.php">Sign out</a></li>
 				</ul>
 			</nav>
-			<a href="logout.php" class="sign-in" >Sign out</a>
 		</header>
 
 
@@ -39,11 +39,11 @@ include("auth_sessionNotActiveCheck.php");
 		<section class="container account">
 			<img src="img/profile.jpg" alt="profile image" class="account-img">
 			<div class="account-info">
-				<p class="name">Alexandra</p>
-				<p><?php echo$_SESSION['email'] ?></p>
-				<p class="points">Points: 100</p>
+				<p class="name"><?php echo $_SESSION['firstname']. " ". $_SESSION['lastname'] ?></p>
+				<p><?php echo $_SESSION['email'] ?></p>
+				<!-- <p class="points">Points: 100</p> -->
 			</div>
-			<a href="#" role="button" class="btn">Manage Account</a>
+			<a href="changePassword.php" role="button" class="btn">Change password</a>
 		</section>
 
 		<!-- Discounts -->
@@ -104,29 +104,7 @@ include("auth_sessionNotActiveCheck.php");
 
 		</div> <!-- End of the Page Content -->
 
-		<!-- Footer -->
-		<footer class="container">
-			<img src="img/logo-full-w.png" alt="logo" class="item">
-			<div class="item">
-				<h2>Follow us</h2>
-				<div class="container social-media">
-					<a href="https://www.facebook.com/" target="_blank" class="item"><img src="img/social-media/facebook.png" alt="facebook"></a>
-					<a href="https://www.instagram.com/" target="_blank" class="item"><img src="img/social-media/ins.png" alt="instagram"></a>
-					<a href="https://twitter.com/" target="_blank" class="item"><img src="img/social-media/twitter.png" alt="twitter"></a>
-				</div>
-			</div>
-			<div class="item">
-				<h2>Contact us</h2>
-				<p>Phone: +1 866-666-8888<br>
-				Email: yo!sushi@gmail.com</p>
-			</div>
-			<div class="item">
-				<h2>Find us</h2>
-				<p>888 Pender St 2nd floor,<br>
-					Vancouver, BC V6B 6N9
-				</p>
-			</div>
-		</footer>
+		<?php include('footer.php'); ?>
 		
 	</body>
 </html>

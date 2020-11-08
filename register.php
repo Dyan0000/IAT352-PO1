@@ -1,4 +1,9 @@
 <?php include('server.php') ?>
+<?php 
+  // Show all errors except 'Notice'
+  error_reporting (E_ALL ^ E_NOTICE); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,10 +64,10 @@
             </label>
             <input type="password" name="password_2">
           </div> 
-          <button type="submit" class="btn button button-block" name="reg_user">Create Account</button>
+          <button type="submit" class="btn button button-block" name="reg_user">Create an Account</button>
           <!-- <input type="submit" class="button button-block" name="submit" value="Create Account"> -->
           <!-- <button type="submit" class="button button-block"/>Get Started</button> -->
-          <p class="tab">Already have an account? <a href="#login">Log In</a></p>
+          <p class="tab">Already have an account? <a href="#login">Log in</a></p>
         </form>
 
       </div>
@@ -89,7 +94,7 @@
           <!-- <p class="forgot"><a href="#">Forgot Password?</a></p> -->
 
           <button class="button button-block" name="login_user">Log In</button>
-          <p class="tab">Don’t have an account? <a href="#signup">Sign Up</a></p>
+          <p class="tab">Don’t have an account? <a href="#signup">Sign up</a></p>
         </form>
 
       </div>

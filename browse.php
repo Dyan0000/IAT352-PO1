@@ -1,6 +1,5 @@
 <?php
-//include auth.php file on all secure pages
-include("auth_sessionNotActiveCheck.php");
+	session_start();
 ?>
 
 <!DOCTYPE html>
@@ -19,25 +18,7 @@ include("auth_sessionNotActiveCheck.php");
 
 <body>
 
-	<!-- Navigation Bar -->
-	<header class="container">
-		<a href="index.php" class="logo"><img src="img/logo-w.png" alt="logo"></a>
-		<nav>
-			<ul class="nav_links">
-				<li><a href="index.php">Home</a></li>
-				<li><a href="browse.php">Menu</a></li>
-				<li><a href="#">Cart</a></li>
-				<?php if (!isset($_SESSION['email'])) {
-					echo "<li> <a class='sign-in'  href='register.php'>Sign up</a></li>";
-				} else {
-					echo
-						"<li><a  href='profile.php'> Profile </a></li>";
-				}
-				?>
-			</ul>
-		</nav>
-
-	</header>
+	<?php include('navigation.php'); ?>
 
 	<section class="browse_layout">
 		<section class="browse_categories">
@@ -392,30 +373,7 @@ include("auth_sessionNotActiveCheck.php");
 
 	</section>
 
-	<!-- footer -->
-	<footer class="container">
-		<img src="img/logo-full-w.png" alt="logo" class="item">
-		<div class="item">
-			<h2>Follow us</h2>
-			<div class="container social-media">
-				<a href="https://www.facebook.com/" target="_blank" class="item"><img src="img/social-media/facebook.png" alt="facebook"></a>
-				<a href="https://www.instagram.com/" target="_blank" class="item"><img src="img/social-media/ins.png" alt="instagram"></a>
-				<a href="https://twitter.com/" target="_blank" class="item"><img src="img/social-media/twitter.png" alt="twitter"></a>
-			</div>
-		</div>
-		<div class="item">
-			<h2>Contact us</h2>
-			<p>Phone: +1 866-666-8888<br>
-				Email: yo!sushi@gmail.com</p>
-		</div>
-		<div class="item">
-			<h2>Find us</h2>
-			<p>888 Pender St 2nd floor,<br>
-				Vancouver, BC V6B 6N9
-			</p>
-		</div>
-	</footer>
-
+	<?php include('footer.php'); ?>
 
 	<!-- menu item popup modal -->
 

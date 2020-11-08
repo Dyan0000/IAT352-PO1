@@ -8,10 +8,9 @@
 	$email = "";
 	$errors = array(); 
 
-	// connect to database
-	$db = mysqli_connect('localhost', 'root', '', 'registration');
+	$db = mysqli_connect("localhost", "root", "", "dan_peng");
 
-	// REGISTER USER
+	// REGISTER USER - create an account
 	if (isset($_POST['reg_user'])) {
 		// receive all input values from the form
 		$firstname = mysqli_real_escape_string($db, $_POST['first_name']);
@@ -34,18 +33,20 @@
 
 		// register user if there are no errors in the form
 		if (count($errors) == 0) {
-			$password = md5($password_1);//encrypt the password before saving in the database
-			$query = "INSERT INTO user (firstname, lastname, email, password) 
+			$password = md5($password_1); //encrypt the password before saving in the database
+			$query = "INSERT INTO users (firstname, lastname, email, password) 
 					  VALUES('$firstname', '$lastname','$email', '$password')";
 			mysqli_query($db, $query);
 
+			$_SESSION['firstname'] = $firstname;
+			$_SESSION['lastname'] = $lastname;
 			$_SESSION['email'] = $email;
+			$_SESSION['password'] = $password;
 			header('location: index.php');
 		}
 
 	}
 
-	// ... 
 
 	// LOGIN USER
 	if (isset($_POST['login_user'])) {
@@ -53,24 +54,25 @@
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 
 		if (empty($email)) {
-			array_push($errors, "Email is required");
+			array_push($errors, "Email is required. ");
 		}
 		if (empty($password)) {
-			array_push($errors, "Password is required");
+			array_push($errors, "Password is required. ");
 		}
 
 		if (count($errors) == 0) {
 			$password = md5($password);
-			$query = "SELECT * FROM user WHERE email='$email' AND password='$password'";
+			$query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
 			$results = mysqli_query($db, $query);
 			
 			if (mysqli_num_rows($results) == 1) {
+				$_SESSION['firstname'] = $firstname;
+				$_SESSION['lastname'] = $lastname;
 				$_SESSION['email'] = $email;
+				$_SESSION['password'] = $password;
 				header('location: index.php');
-			}else {
-				
-				array_push($errors, "Wrong email/password combination");
-				
+			} else {
+				array_push($errors, "Sorry, your email or password is wrong.");
 			}
 		}
 	}

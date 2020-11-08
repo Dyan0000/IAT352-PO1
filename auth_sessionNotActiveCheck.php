@@ -4,11 +4,9 @@
 // if there is no active session --> user is not logged in
 // redirect user to login page
 session_start();
-
-if(!isset($_SESSION["email"])){
-
-  
-  header("Location: register.php");
-  exit(); }
+if(!isset($_SESSION["email"])) {
+  header("location: register.php");
+  exit(); 
+}
 
 ?>
