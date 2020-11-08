@@ -1,3 +1,9 @@
+<?php
+//include auth.php file on all secure pages
+include("auth_sessionNotActiveCheck.php");
+?>
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -22,7 +28,7 @@
 					<li><a href="#">Cart</a></li>
 				</ul>
 			</nav>
-			<a href="index.php" class="sign-in">Sign out</a>
+			<a href="logout.php" class="sign-in" >Sign out</a>
 		</header>
 
 
@@ -34,7 +40,7 @@
 			<img src="img/profile.jpg" alt="profile image" class="account-img">
 			<div class="account-info">
 				<p class="name">Alexandra</p>
-				<p>alexandra@gmail.com</p>
+				<p><?php echo$_SESSION['email'] ?></p>
 				<p class="points">Points: 100</p>
 			</div>
 			<a href="#" role="button" class="btn">Manage Account</a>
