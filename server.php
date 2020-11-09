@@ -25,8 +25,8 @@
 		if ($check_email == FALSE) array_push($errors, "Please type in valid email address.");
 
 		// form validation: ensure that the form is correctly filled
-		if (empty($firstname)) array_push($errors, "First Name is required.");
-		if (empty($lastname)) array_push($errors, "Last Name is required.");
+		if (empty($firstname)) array_push($errors, "First name is required.");
+		if (empty($lastname)) array_push($errors, "Last name is required.");
 		// if (empty($username)) array_push($errors, "Username is required");
 		if (empty($email)) array_push($errors, "Email is required.");
 		if (empty($password_1)) array_push($errors, "Password is required.");
@@ -46,6 +46,9 @@
 			$_SESSION['lastname'] = $lastname;
 			$_SESSION['email'] = $email;
 			$_SESSION['password'] = $password;
+			$_SESSION['id'] = mysqli_insert_id($db);
+			// echo $_SESSION['id'];
+			
 			header('location: index.php');
 		}
 
@@ -76,10 +79,11 @@
 				$results_array = mysqli_fetch_assoc($results);
 				$_SESSION['firstname'] = $results_array['firstname'];
 				$_SESSION['lastname'] = $results_array['lastname'];
+				$_SESSION['id'] = $results_array['id'];
 
 				header('location: index.php');
 			} else {
-				array_push($errors, "Sorry, your email and password don't match.");
+				array_push($errors, "Sorry, your email or password is wrong.");
 			}
 		}
 	}

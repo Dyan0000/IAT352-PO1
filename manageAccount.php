@@ -4,7 +4,7 @@
 ?>
 
 <?php
-	$manage_errors = array();
+	$update_errors = array();
 
   // Create a database connection
   $dbhost = "localhost";
@@ -65,75 +65,66 @@
 				<a href="profile.php" role="button" class="btn">Cancel</a>
 			</section>
 
-			<!-- Change password -->
+			<!-- Manage account -->
+			<?php
+			  $userID = $_SESSION['id'];
+			  $sql_01 = "SELECT * FROM users WHERE id = ". $userID;
+			  $sql01_result = mysqli_query($connection, $sql_01);
+			  $user_info = mysqli_fetch_assoc($sql01_result);
+
+			 //  foreach($user_info as $value) {
+				//   echo "Value=" . $value;
+				//   echo "<br>";
+				// }
+			?>
+
 			<section  id="form">
-				<h2>Change Your Password</h2>
+				<h2>Your Account Information:</h2>
 				<form action="#form" method="post" class="change-form">
-					<label>Current password: <input type="password" name="current_password"></label>
-					<label>New password: <input type="password" name="new_password"></label>
-					<label>Confirm new password: <input type="password" name="confirm_password"></label><br>
-					<input type="submit" name="change_password" value="Change Password" class="btn">
+					<label>First name: <input type="text" name="new_firstname" value="<?php echo $user_info['firstname'] ?>"></label>
+					<label>Last name: <input type="text" name="new_lastname" value="<?php echo $user_info['lastname'] ?>"></label>
+					<label>Email: <input type="email" name="new_email" value="<?php echo $user_info['email'] ?>"></label>
+					<input type="submit" name="update" value="Update Account" class="btn">
 
 				<?php
-					if (isset($_POST["change_password"])) {
+				  if (isset($_POST['update'])) {
 
-						$current = trim($_POST["current_password"]);
-						$new = trim($_POST["new_password"]);
-						$confirm = trim($_POST["confirm_password"]);
-						
-						// Check if three inputs are not empty
-						if (!empty($current) && !empty($new) && !empty($confirm)) {
+				  	// Get the form values and sanitize them
+				  	$firstname = mysqli_real_escape_string($connection, $_POST['new_firstname']);
+						$lastname = mysqli_real_escape_string($connection, $_POST['new_lastname']);
+						$email = mysqli_real_escape_string($connection, $_POST['new_email']);
 
-							// Check if user confirmed new password correctly
-							if ($new == $confirm) {
+						// Check if the variable $email is a valid email address
+						$check_email = filter_var($email, FILTER_VALIDATE_EMAIL);
+						if ($check_email == FALSE) array_push($update_errors, "Please type in valid email address.");
 
-								$current = md5($current);
-								$new = md5($new);
-							
-								// Check if current password is correct
-								if ($current == $_SESSION['password']) {
+						// Form validation: ensure that the form is correctly filled
+						if (empty($firstname)) array_push($update_errors, "First name is required.");
+						if (empty($lastname)) array_push($update_errors, "Last name is required.");
+						if (empty($email)) array_push($update_errors, "Email is required.");
 
-									// Perform database query - update a new password
-									$query = "UPDATE users SET ";
-									$query .= "password = '$new' ";
-									$query .= "WHERE id =". $_SESSION['id'];
-									
-									$result = mysqli_query($connection, $query);
-									
-									// Check if there is a query error
-									if (!empty($result) && mysqli_affected_rows($connection) == 1) {
-										array_push($manage_errors, "Awesome! You have successfully set up a new password. ");
-									}
-									else { 
-										array_push($manage_errors, "Bummer! You failed to update your new password. ");
-									}
-
-								} // end of "if ($current == $password_from_db)"
-								else {
-									array_push($manage_errors, "Sorry, your current password is wrong. ");
-								}
-
-							} // end of checking new password is confirm correctly
-							else {
-								array_push($manage_errors, "You didn't confirm your new password. Please try again. ");
-							}
-
-						} // end of checking three inputs are not empty
-						else {
-							array_push($manage_errors, "Please provide both your current password and new password. ");
+						if (count($update_errors) == 0) {
+							// Update new account information into the database
+							$sql_02 = "UPDATE users SET firstname = '". $firstname. "', lastname = '". $lastname. "', email = '". $email. "' ";
+							$sql_02 .= "WHERE id = ". $userID;
+							mysqli_query($connection, $sql_02);
 						}
-						
-					}
+
+					 }
 				?>
 
 					<!-- Display error message -->
-					<?php
-						if (!empty($manage_errors)) {
-							foreach ($manage_errors as $error) {
+					<?php 
+						if (!empty($update_errors)) {
+							foreach ($update_errors as $error) {
 								echo "<p class='error'>". $error. "</p>";
 							} 
+						} 
+						else {
+							echo "<p class='error'>Awesome! You have successfully updated your account information.<p>";
 						}
 					?>
+						
 				</form>
 			</section>
 

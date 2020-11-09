@@ -155,6 +155,7 @@ footer h2 {margin-top: 0}
 
 /* Call-to-action Button */
 .btn {
+	cursor: pointer;
 	display: block;
 	background-color: #231F20;
 	color: white;

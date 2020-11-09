@@ -40,10 +40,13 @@
 			<img src="img/profile.jpg" alt="profile image" class="account-img">
 			<div class="account-info">
 				<p class="name"><?php echo $_SESSION['firstname']. " ". $_SESSION['lastname'] ?></p>
-				<p><?php echo $_SESSION['email'] ?></p>
+				<p>Email: <?php echo $_SESSION['email'] ?></p>
 				<!-- <p class="points">Points: 100</p> -->
 			</div>
-			<a href="changePassword.php" role="button" class="btn">Change password</a>
+			<div>
+				<a href="changePassword.php" role="button" class="btn">Change Password</a>
+				<a href="manageAccount.php" role="button" class="btn">Manage Account</a>
+			</div>
 		</section>
 
 		<!-- Discounts -->
@@ -84,7 +87,7 @@
 				<div>
 					<a href="#" role="button" class="btn">Reorder</a>
 					<p class="right-align">$33.99</p>
-					<p class="right-align"><a href="#" class="link">View receipt >></a></p>
+					<p class="right-align"><a href="#" class="link">View receipt &gt;&gt;</a></p>
 				</div>
 			</div>
 			<div class="container past-order-box">
@@ -97,7 +100,7 @@
 				<div>
 					<a href="#" role="button" class="btn">Reorder</a>
 					<p class="right-align">$41.20</p>
-					<p class="right-align"><a href="#" class="link">View receipt >></a></p>
+					<p class="right-align"><a href="#" class="link">View receipt &gt;&gt;</a></p>
 				</div>
 			</div>
 		</section>

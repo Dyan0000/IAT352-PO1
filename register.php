@@ -15,6 +15,8 @@
 <body>
 
   <div class="form">
+    <a href="index.php" class="link">&lt;&lt; Back to Home Page</a>
+
     <img src="img/logo-b.png" alt="logo" class="logo">
 
     <div class="tab-content">

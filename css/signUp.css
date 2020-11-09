@@ -183,3 +183,14 @@ textarea {
   margin-top: -20px;
   text-align: right;
 }
+
+/* In-text Link */
+a.link, .link_bt {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #231F20;
+}
+a.link:hover, a.link:active, a.link:focus,
+.link_bt:hover, .link_bt:active, .link_bt:focus {
+  color: #EE3324;
+}
