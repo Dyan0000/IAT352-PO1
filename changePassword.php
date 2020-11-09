@@ -58,7 +58,7 @@
 			<section class="container account">
 				<img src="img/profile.jpg" alt="profile image" class="account-img">
 				<div class="account-info">
-					<p class="name"><?php echo $_SESSION['firstname']. $_SESSION['lastname'] ?></p>
+					<p class="name"><?php echo $_SESSION['firstname']. " ". $_SESSION['lastname'] ?></p>
 					<p><?php echo $_SESSION['email'] ?></p>
 					<!-- <p class="points">Points: 100</p> -->
 				</div>
@@ -77,43 +77,50 @@
 				<?php
 					if (isset($_POST["submit"])) {
 
-						$current = md5(trim($_POST["current_password"]));
-						$new = md5(trim($_POST["new_password"]));
-						$confirm = md5(trim($_POST["confirm_password"]));
-
-						if ($new != $confirm) {
-							array_push($manage_errors, "Failed to confirm your new password. ");
-						}
+						$current = trim($_POST["current_password"]);
+						$new = trim($_POST["new_password"]);
+						$confirm = trim($_POST["confirm_password"]);
 						
-						if ($current && $new) {
+						// Check if three inputs are not empty
+						if (!empty($current) && !empty($new) && !empty($confirm)) {
 
-							// Check if current password is correct
-							if ($current == $_SESSION['password']) {
+							// Check if user confirmed new password correctly
+							if ($new == $confirm) {
 
-								// Perform database query - update a new password
-								$query = "UPDATE users SET ";
-								$query .= "password = '$new' ";
-								$query .= "WHERE email = '". $_SESSION['email']. "';";
-								
-								$result = mysqli_query($connection, $query);
-								
-								// Check if there is a query error
-								if (!empty($result) && mysqli_affected_rows($connection) == 1) {
-									// mysqli_free_result($result); // Release returned data
-									array_push($manage_errors, "Awesome! You have successfully set up a new password. ");
-								}
-								else { 
-									array_push($manage_errors, "Failed to update a new password. Please try again. ");
-								}
-
-							} // end of "if ($current == $password_from_db)"
-							else {
-								array_push($manage_errors, "Current password is wrong. Please try again. ");
-							}
+								$current = md5($current);
+								$new = md5($new);
 							
-						} // end of "if (!$current && !$new)"
+								// Check if current password is correct
+								if ($current == $_SESSION['password']) {
+
+									// Perform database query - update a new password
+									$query = "UPDATE users SET ";
+									$query .= "password = '$new' ";
+									$query .= "WHERE email = '". $_SESSION['email']. "';";
+									
+									$result = mysqli_query($connection, $query);
+									
+									// Check if there is a query error
+									if (!empty($result) && mysqli_affected_rows($connection) == 1) {
+										array_push($manage_errors, "Awesome! You have successfully set up a new password. ");
+									}
+									else { 
+										array_push($manage_errors, "Bummer! You failed to update your new password. ");
+									}
+
+								} // end of "if ($current == $password_from_db)"
+								else {
+									array_push($manage_errors, "Sorry, your current password is wrong. ");
+								}
+
+							} // end of checking new password is confirm correctly
+							else {
+								array_push($manage_errors, "You didn't confirm your new password. Please try again. ");
+							}
+
+						} // end of checking three inputs are not empty
 						else {
-							array_push($manage_errors, "Please provide both your current password and your new password. ");
+							array_push($manage_errors, "Please provide both your current password and new password. ");
 						}
 						
 					}

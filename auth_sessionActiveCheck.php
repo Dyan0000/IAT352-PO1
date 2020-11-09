@@ -7,7 +7,8 @@ session_start();
 
 if(isset($_SESSION["email"])){
   // if session variable 'username'is set - redirect to members page
-  header("Location: index.php");
-  exit(); }
+  header("location: index.php");
+  exit(); 
+}
 
 ?>

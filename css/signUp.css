@@ -157,6 +157,7 @@ textarea {
 
 .button {
   border: 0;
+  border-radius: 2px;
   outline: none;
   border-radius: 0;
   padding: 15px 0;
@@ -170,7 +171,7 @@ textarea {
   -webkit-appearance: none;
 }
 .button:hover, .button:focus {
-  background: #ee3124d1;
+  background: #ee3124;
 }
 
 .button-block {

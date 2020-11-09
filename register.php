@@ -1,8 +1,4 @@
 <?php include('server.php') ?>
-<?php 
-  // Show all errors except 'Notice'
-  error_reporting (E_ALL ^ E_NOTICE); 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +72,9 @@
       <div id="login">
 
         <form action="register.php" method="post">
+
         <?php include('errors.php'); ?>
+
           <div class="field-wrap">
             <label>
               Email Address<span class="req">*</span>
