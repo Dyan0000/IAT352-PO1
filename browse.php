@@ -1,6 +1,11 @@
 <?php
-	session_start();
+require_once("connect.php");
+session_start();
+
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -216,7 +221,11 @@
 			<div class="menu_section col-2-3">
 
 
+
+
+
 				<!-- starters -->
+
 				<div class="list_title">
 					<h1 class="heading2">Starters</h1>
 				</div>
@@ -224,63 +233,45 @@
 
 				<div class="menu_list grid">
 
+				<?php
 
 
-					<div id="menuItem" class="menu_item">
+				function get_starters(){
+					global $db;
+					$ret = array();
+					$sql = "SELECT * FROM dishes WHERE category='Starters'";
+					$result = mysqli_query($db, $sql);
+
+					while($ar = mysqli_fetch_assoc($result)){
+						$ret[] = $ar;
+
+
+						echo '
+						<div id="menuItem" class="menu_item">
 
 						<div class="item_image">
-							<img src="img/starters/tomato-kimchi.jpeg" alt="food image">
+							<img src=" '.$ar['img_path'].' " alt="food image">
 						</div>
 
 						<div class="item_text">
-							<div class="item_name">Tomato Kimchi</div>
-							<div class="item_description text-body-sml">Sweet and spicy tomato salad</div>
-							<div class="item_price">$4.99</div>
+							<div class="item_name"> '.$ar['name'].' </div>
+							<div class="item_description text-body-sml"> '.$ar['description'].' </div>
+							<div class="item_price"> '.$ar['unit_price'].' </div>
 						</div>
 
-					</div>
+					</div>';
+					}
+					return $ret;
 
-					<div id="menuItem" class="menu_item">
 
-						<div class="item_image">
-							<img src="img/starters/spicy-gyoza.jpeg" alt="food image">
-						</div>
+				}
+				$dishes = get_starters();
 
-						<div class="item_text">
-							<div class="item_name">Spicy Gyoza</div>
-							<div class="item_description text-body-sml">Deep fried gyoza mixed with greens feat Korean style spicy sauce.</div>
-							<div class="item_price">$6.99</div>
-						</div>
+				?>
 
-					</div>
 
-					<div id="menuItem" class="menu_item">
 
-						<div class="item_image">
-							<img src="img/starters/edamame.jpeg" alt="food image">
-						</div>
 
-						<div class="item_text">
-							<div class="item_name">Edamame</div>
-							<div class="item_description text-body-sml">Steamed and seasoned with salt</div>
-							<div class="item_price">$2.99</div>
-						</div>
-
-					</div>
-
-					<div id="menuItem" class="menu_item">
-
-						<div class="item_image">
-							<img src="img//starters/tako-yaki.jpeg" alt="food image">
-						</div>
-
-						<div class="item_text">
-							<div class="item_name">Takoyaki</div>
-							<div class="item_description text-body-sml">Filled with diced octopus, tempura scraps, pickled ginger, and green onion.</div>
-							<div class="item_price">$7.99</div>
-						</div>
-
-					</div>
 
 				</div>
 
@@ -289,82 +280,239 @@
 					<h1 class="heading2">Donburi</h1>
 				</div>
 
+				<div class="menu_list grid">
+
+				<?php
+
+
+				function get_donburi(){
+					global $db;
+					$ret = array();
+					$sql = "SELECT * FROM dishes WHERE category='Donburi'";
+					$result = mysqli_query($db, $sql);
+
+					while($ar = mysqli_fetch_assoc($result)){
+						$ret[] = $ar;
+
+
+						echo '
+						<div id="menuItem" class="menu_item">
+
+						<div class="item_image">
+							<img src=" '.$ar['img_path'].' " alt="food image">
+						</div>
+
+						<div class="item_text">
+							<div class="item_name"> '.$ar['name'].' </div>
+							<div class="item_description text-body-sml"> '.$ar['description'].' </div>
+							<div class="item_price"> '.$ar['unit_price'].' </div>
+						</div>
+
+					</div>';
+					}
+					return $ret;
+
+
+				}
+				$dishes = get_donburi();
+
+				?>
+
+
+				</div>
+
+				<!-- Sashimi -->
+				<div class="list_title">
+					<h1 class="heading2">Sashimi</h1>
+				</div>
 
 				<div class="menu_list grid">
 
+				<?php
 
 
-					<div id="menuItem" class="menu_item">
+				function get_sashimi(){
+					global $db;
+					$ret = array();
+					$sql = "SELECT * FROM dishes WHERE category='Sashimi'";
+					$result = mysqli_query($db, $sql);
+
+					while($ar = mysqli_fetch_assoc($result)){
+						$ret[] = $ar;
+
+
+						echo '
+						<div id="menuItem" class="menu_item">
 
 						<div class="item_image">
-							<img src="img/donburi/chashu.jpg" alt="food image">
+							<img src=" '.$ar['img_path'].' " alt="food image">
 						</div>
 
 						<div class="item_text">
-							<div class="item_name">Chashu Don</div>
-							<div class="item_description text-body-sml">Japanese style braised pork rice feat. hatcho miso sauce and mustard mayo</div>
-							<div class="item_price">$14.99</div>
+							<div class="item_name"> '.$ar['name'].' </div>
+							<div class="item_description text-body-sml"> '.$ar['description'].' </div>
+							<div class="item_price"> '.$ar['unit_price'].' </div>
 						</div>
 
-					</div>
+					</div>';
+					}
+					return $ret;
 
-					<div id="menuItem" class="menu_item">
 
-						<div class="item_image">
-							<img src="img/donburi/kimchi.jpg" alt="food image">
-						</div>
+				}
+				$dishes = get_sashimi();
 
-						<div class="item_text">
-							<div class="item_name">Kimchi Don</div>
-							<div class="item_description text-body-sml">Korean style pan fried kimchi and bacon.</div>
-							<div class="item_price">$13.99</div>
-						</div>
+				?>
 
-					</div>
-
-					<div id="menuItem" class="menu_item">
-
-						<div class="item_image">
-							<img src="img/donburi/mushroom.jpeg" alt="food image">
-						</div>
-
-						<div class="item_text">
-							<div class="item_name">Mushroom Don</div>
-							<div class="item_description text-body-sml">Mushroom "Shiitake and shimeji" rice in hot stone bowl seaweed "Nori" sauce.</div>
-							<div class="item_price">$16.99</div>
-						</div>
-
-					</div>
-
-					<div id="menuItem" class="menu_item">
-
-						<div class="item_image">
-							<img src="img//donburi/salmon.jpeg" alt="food image">
-						</div>
-
-						<div class="item_text">
-							<div class="item_name">Salmon Sashimi Don</div>
-							<div class="item_description text-body-sml">Sushi rice topped with 8 pieces of fresh Salmon sashimi.</div>
-							<div class="item_price">$15.99</div>
-						</div>
-
-					</div>
-
-					<div id="menuItem" class="menu_item">
-
-						<div class="item_image">
-							<img src="img//donburi/unagi.jpeg" alt="food image">
-						</div>
-
-						<div class="item_text">
-							<div class="item_name">Unagi Don</div>
-							<div class="item_description text-body-sml">Sushi rice topped with Unagi.</div>
-							<div class="item_price">$18.99</div>
-						</div>
-
-					</div>
 
 				</div>
+
+				<!-- Sushi -->
+				<div class="list_title">
+					<h1 class="heading2">Sushi</h1>
+				</div>
+
+				<div class="menu_list grid">
+
+				<?php
+
+
+				function get_sushi(){
+					global $db;
+					$ret = array();
+					$sql = "SELECT * FROM dishes WHERE category='Sushi'";
+					$result = mysqli_query($db, $sql);
+
+					while($ar = mysqli_fetch_assoc($result)){
+						$ret[] = $ar;
+
+
+						echo '
+						<div id="menuItem" class="menu_item">
+
+						<div class="item_image">
+							<img src=" '.$ar['img_path'].' " alt="food image">
+						</div>
+
+						<div class="item_text">
+							<div class="item_name"> '.$ar['name'].' </div>
+							<div class="item_description text-body-sml"> '.$ar['description'].' </div>
+							<div class="item_price"> '.$ar['unit_price'].' </div>
+						</div>
+
+					</div>';
+					}
+					return $ret;
+
+
+				}
+				$dishes = get_sushi();
+
+				?>
+
+
+				</div>
+
+
+				<!-- Tempura -->
+				<div class="list_title">
+					<h1 class="heading2">Tempura</h1>
+				</div>
+
+				<div class="menu_list grid">
+
+				<?php
+
+
+				function get_tempura(){
+					global $db;
+					$ret = array();
+					$sql = "SELECT * FROM dishes WHERE category='Tempura'";
+					$result = mysqli_query($db, $sql);
+
+					while($ar = mysqli_fetch_assoc($result)){
+						$ret[] = $ar;
+
+
+						echo '
+						<div id="menuItem" class="menu_item">
+
+						<div class="item_image">
+							<img src=" '.$ar['img_path'].' " alt="food image">
+						</div>
+
+						<div class="item_text">
+							<div class="item_name"> '.$ar['name'].' </div>
+							<div class="item_description text-body-sml"> '.$ar['description'].' </div>
+							<div class="item_price"> '.$ar['unit_price'].' </div>
+						</div>
+
+					</div>';
+					}
+					return $ret;
+
+
+				}
+				$dishes = get_tempura();
+
+				?>
+
+
+				</div>
+
+
+				<!-- Drinks -->
+				<div class="list_title">
+					<h1 class="heading2">Drinks</h1>
+				</div>
+
+				<div class="menu_list grid">
+
+				<?php
+
+
+				function get_drinks(){
+					global $db;
+					$ret = array();
+					$sql = "SELECT * FROM dishes WHERE category='Drinks'";
+					$result = mysqli_query($db, $sql);
+
+					while($ar = mysqli_fetch_assoc($result)){
+						$ret[] = $ar;
+
+
+						echo '
+						<div id="menuItem" class="menu_item">
+
+						<div class="item_image">
+							<img src=" '.$ar['img_path'].' " alt="food image">
+						</div>
+
+						<div class="item_text">
+							<div class="item_name"> '.$ar['name'].' </div>
+							<div class="item_description text-body-sml"> '.$ar['description'].' </div>
+							<div class="item_price"> '.$ar['unit_price'].' </div>
+						</div>
+
+					</div>';
+					}
+					return $ret;
+
+
+				}
+				$dishes = get_drinks();
+
+				?>
+
+
+				</div>
+
+
+
+
+
+
+	
 
 			</div>
 
