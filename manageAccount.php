@@ -1,25 +1,10 @@
 <?php	
 	// include auth.php file on all secure pages
 	include("auth_sessionNotActiveCheck.php");
-?>
 
-<?php
+	// connect to database
+	require_once('connect.php');
 	$update_errors = array();
-
-  // Create a database connection
-  $dbhost = "localhost";
-  $dbuser = "root";
-  $dbpass = "";
-  $dbname = "dan_peng";
-  $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-  
-  // Test if connection succeeded
-  if(mysqli_connect_errno()) {
-    die("Database connection failed: " .
-         mysqli_connect_error() .
-         " (" . mysqli_connect_errno() . ")"
-    );
-  }
 ?>
 
 
@@ -69,7 +54,7 @@
 			<?php
 			  $userID = $_SESSION['id'];
 			  $sql_01 = "SELECT * FROM users WHERE id = ". $userID;
-			  $sql01_result = mysqli_query($connection, $sql_01);
+			  $sql01_result = mysqli_query($db, $sql_01);
 			  $user_info = mysqli_fetch_assoc($sql01_result);
 
 			 //  foreach($user_info as $value) {
@@ -89,10 +74,10 @@
 				<?php
 				  if (isset($_POST['update'])) {
 
-				  	// Get the form values and sanitize them
-				  	$firstname = mysqli_real_escape_string($connection, $_POST['new_firstname']);
-						$lastname = mysqli_real_escape_string($connection, $_POST['new_lastname']);
-						$email = mysqli_real_escape_string($connection, $_POST['new_email']);
+				  		// Get the form values and sanitize them
+				  		$firstname = mysqli_real_escape_string($db, $_POST['new_firstname']);
+						$lastname = mysqli_real_escape_string($db, $_POST['new_lastname']);
+						$email = mysqli_real_escape_string($db, $_POST['new_email']);
 
 						// Check if the variable $email is a valid email address
 						$check_email = filter_var($email, FILTER_VALIDATE_EMAIL);
@@ -107,7 +92,8 @@
 							// Update new account information into the database
 							$sql_02 = "UPDATE users SET firstname = '". $firstname. "', lastname = '". $lastname. "', email = '". $email. "' ";
 							$sql_02 .= "WHERE id = ". $userID;
-							mysqli_query($connection, $sql_02);
+							mysqli_query($db, $sql_02);
+							array_push($update_errors, "Awesome! You have successfully updated your account information.");
 						}
 
 					 }
@@ -119,9 +105,6 @@
 							foreach ($update_errors as $error) {
 								echo "<p class='error'>". $error. "</p>";
 							} 
-						} 
-						else {
-							echo "<p class='error'>Awesome! You have successfully updated your account information.<p>";
 						}
 					?>
 						
@@ -138,5 +121,5 @@
 
 <?php
   // Close database connection
-  mysqli_close($connection);
+  mysqli_close($db);
 ?>

@@ -8,7 +8,8 @@
 	$email = "";
 	$errors = array(); 
 
-	$db = mysqli_connect("localhost", "root", "", "dan_peng");
+	// $db = mysqli_connect("localhost", "root", "", "dan_peng");
+	require_once('connect.php');
 
 	// REGISTER USER - create an account
 	if (isset($_POST['reg_user'])) {

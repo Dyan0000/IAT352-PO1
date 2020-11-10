@@ -1,27 +1,11 @@
 <?php	
 	// include auth.php file on all secure pages
 	include("auth_sessionNotActiveCheck.php");
-?>
 
-<?php
+	// connect to database
+	require_once('connect.php');
 	$manage_errors = array();
-
-  // Create a database connection
-  $dbhost = "localhost";
-  $dbuser = "root";
-  $dbpass = "";
-  $dbname = "dan_peng";
-  $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-  
-  // Test if connection succeeded
-  if(mysqli_connect_errno()) {
-    die("Database connection failed: " .
-         mysqli_connect_error() .
-         " (" . mysqli_connect_errno() . ")"
-    );
-  }
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -98,10 +82,10 @@
 									$query .= "password = '$new' ";
 									$query .= "WHERE id =". $_SESSION['id'];
 									
-									$result = mysqli_query($connection, $query);
+									$result = mysqli_query($db, $query);
 									
 									// Check if there is a query error
-									if (!empty($result) && mysqli_affected_rows($connection) == 1) {
+									if (!empty($result) && mysqli_affected_rows($db) == 1) {
 										array_push($manage_errors, "Awesome! You have successfully set up a new password. ");
 									}
 									else { 
@@ -147,5 +131,5 @@
 
 <?php
   // Close database connection
-  mysqli_close($connection);
+  mysqli_close($db);
 ?>
