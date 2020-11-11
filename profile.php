@@ -60,7 +60,7 @@
 		</section>
 
 		<!-- Favourite Dishes -->
-		<section>
+		<!-- <section>
 			<h2>Favourite Dishes</h2>
 			<div class="container favourite">
 				<div class="item"><img src="img/salad/seafood.jpeg"></div>
@@ -72,7 +72,7 @@
 				<div class="item"><img src="img/donburi/kimchi.jpg"></div>
 				<div class="item"><img src="img/donburi/mushroom.jpeg"></div>
 			</div>
-		</section>
+		</section> -->
 
 		<!-- Past Orders -->
 		<section class="past-orders">

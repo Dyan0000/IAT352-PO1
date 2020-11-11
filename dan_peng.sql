@@ -1,4 +1,7 @@
 -- phpMyAdmin SQL Dump
+CREATE DATABASE  `dan_peng`;
+USE `dan_peng`;
+
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
@@ -19,7 +22,6 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `dan_peng`
---
 
 -- --------------------------------------------------------
 
@@ -44,26 +46,26 @@ CREATE TABLE `dishes` (
 
 INSERT INTO `dishes` (`dish_id`, `name`, `unit_price`, `description`, `img_path`, `category`, `dietary`, `meat`) VALUES
 (1, 'Tomato Kimchi', '4.99', 'Sweet and spicy tomato salad\r\n', 'img/starters/tomato-kimchi.jpeg', 'Starters', 'vegetarian', ''),
-(2, 'Spicy Gyoza', '6.99', 'Deep fried gyoza mixed with greens feat Korean style spicy sauce.\r\n', 'img/starters/spicy-gyoza.jpeg', 'Starters', '', ''),
+(2, 'Spicy Gyoza', '6.99', 'Deep fried gyoza mixed with greens feat Korean style spicy sauce.\r\n', 'img/starters/spicy-gyoza.jpeg', 'Starters', '', 'pork'),
 (3, 'Edamame', '2.99', 'Steamed and seasoned with salt', 'img/starters/edamame.jpeg', 'Starters', 'vegetarian', ''),
-(4, 'Takoyaki', '7.99', 'Filled with diced octopus, tempura scraps, pickled ginger, and green onion.', 'img/starters/tako-yaki.jpeg', 'Starters', '', ''),
-(5, 'Chashu Don', '14.99', 'Japanese style braised pork rice feat. hatcho miso sauce and mustard mayo', 'img/donburi/chashu.jpg', 'Donburi', '', ''),
+(4, 'Takoyaki', '7.99', 'Filled with diced octopus, tempura scraps, pickled ginger, and green onion.', 'img/starters/tako-yaki.jpeg', 'Starters', '', 'seafood'),
+(5, 'Chashu Don', '14.99', 'Japanese style braised pork rice feat. hatcho miso sauce and mustard mayo', 'img/donburi/chashu.jpg', 'Donburi', '', 'pork'),
 (6, 'Kimchi Don', '13.99', 'Korean style pan fried kimchi and bacon.', 'img/donburi/kimchi.jpg', 'Donburi', '', ''),
 (7, 'Mushroom Don', '16.99', 'Mushroom \"Shiitake and shimeji\" rice in hot stone bowl seaweed \"Nori\" sauce.', 'img/donburi/mushroom.jpeg', 'Donburi', 'vegetarian', ''),
-(8, 'Salmon Don', '15.99', 'Wild Salmon sashimi on top of sushi rice', 'img/donburi/salmon.jpeg', 'Donburi', '', ''),
-(9, 'Unagi Don', '16.99', 'Japanese Unagi with sliced eggs on top of sushi rice', 'img/donburi/unagi.jpeg', 'Donburi', '', ''),
-(10, 'Salmon Sashimi', '13.99', '9 pieces of wild Salmon sashimi', 'img/sashimi/salmon.jpeg', 'Sashimi', '', ''),
-(11, 'Toro Sashimi', '15.99', '9 pieces of Toro sashimi (Tuna belly)', 'img/sashimi/toro.jpeg', 'Sashimi', '', ''),
-(12, 'Aburi Tobiko', '12.49', 'Crab meat, salmon, cucumber, fish egg oshi sauce, and serano.', 'img/sushi/aburi-tobiko.jpeg', 'Sushi', '', ''),
-(13, 'Hotate Oshi Sushi', '12.49', 'Scallop, fish egg, and oshi sauce.', 'img/sushi/hotate.jpeg', 'Sushi', '', ''),
-(14, 'Kani Ume Oshi Sushi', '12.99', 'Real crab, prawn, ume oshi sauce, crispy capers, and ume dressing.', 'img/sushi/kani-ume.jpeg', 'Sushi', '', ''),
-(15, 'Salmon Oshi Sushi', '12.99', 'Sockeye salmon, oshi sauce, and jalapeno.', 'img/sushi/salmon.jpeg', 'Sushi', '', ''),
-(16, 'Tofu Sushi', '11.99', 'Seasoned soft tofu and soybean paper.', 'img/sushi/tofu.jpeg', 'Sushi', '', ''),
-(17, 'Unagi Oshi Sushi', '13.99', 'Double layer BBQ eel, sweet spicy miso, garlic chip, green onion, and sesame oil.\r\n', 'img/sushi/unagi.jpeg', 'Sushi', '', ''),
-(18, 'Yukke Tuna Sushi', '12.49', 'Soy marinated minced tuna and sweet onion sauce.', 'img/sushi/yukke-tuna.jpg', 'Sushi', '', ''),
-(19, 'Sime Saba Sushi', '12.99', 'Sweet vinegar marinated mackerel and katsuo miso sauce.', 'img/sushi/sime-saba.jpeg', 'Sushi', '', ''),
+(8, 'Salmon Don', '15.99', 'Wild Salmon sashimi on top of sushi rice', 'img/donburi/salmon.jpeg', 'Donburi', '', 'seafood'),
+(9, 'Unagi Don', '16.99', 'Japanese Unagi with sliced eggs on top of sushi rice', 'img/donburi/unagi.jpeg', 'Donburi', '', 'seafood'),
+(10, 'Salmon Sashimi', '13.99', '9 pieces of wild Salmon sashimi', 'img/sashimi/salmon.jpeg', 'Sashimi', '', 'seafood'),
+(11, 'Toro Sashimi', '15.99', '9 pieces of Toro sashimi (Tuna belly)', 'img/sashimi/toro.jpeg', 'Sashimi', '', 'seafood'),
+(12, 'Aburi Tobiko', '12.49', 'Crab meat, salmon, cucumber, fish egg oshi sauce, and serano.', 'img/sushi/aburi-tobiko.jpeg', 'Sushi', '', 'seafood'),
+(13, 'Hotate Oshi Sushi', '12.49', 'Scallop, fish egg, and oshi sauce.', 'img/sushi/hotate.jpeg', 'Sushi', '', 'seafood'),
+(14, 'Kani Ume Oshi Sushi', '12.99', 'Real crab, prawn, ume oshi sauce, crispy capers, and ume dressing.', 'img/sushi/kani-ume.jpeg', 'Sushi', '', 'seafood'),
+(15, 'Salmon Oshi Sushi', '12.99', 'Sockeye salmon, oshi sauce, and jalapeno.', 'img/sushi/salmon.jpeg', 'Sushi', '', 'seafood'),
+(16, 'Tofu Sushi', '11.99', 'Seasoned soft tofu and soybean paper.', 'img/sushi/tofu.jpeg', 'Sushi', 'vegetarian', ''),
+(17, 'Unagi Oshi Sushi', '13.99', 'Double layer BBQ eel, sweet spicy miso, garlic chip, green onion, and sesame oil.\r\n', 'img/sushi/unagi.jpeg', 'Sushi', '', 'seafood'),
+(18, 'Yukke Tuna Sushi', '12.49', 'Soy marinated minced tuna and sweet onion sauce.', 'img/sushi/yukke-tuna.jpg', 'Sushi', '', 'seafood'),
+(19, 'Sime Saba Sushi', '12.99', 'Sweet vinegar marinated mackerel and katsuo miso sauce.', 'img/sushi/sime-saba.jpeg', 'Sushi', '', 'seafood'),
 (24, 'Assorted Tempura', '6.99', 'Two pieces prawn and four pieces veggie.', 'img/tempura/appetizer.jpeg', 'Tempura', '', ''),
-(25, 'Prawn Tempura', '8.99', '6 pieces of prawn tempura', 'img/tempura/prawn.jpeg', 'Tempura', '', ''),
+(25, 'Prawn Tempura', '8.99', '6 pieces of prawn tempura', 'img/tempura/prawn.jpeg', 'Tempura', '', 'seafood'),
 (26, 'Snapper Tempura', '9.49', 'Deep fried battered snapper, unagi $ wasabi sauce 6 pieces', 'img/tempura/snapper.jpeg', 'Tempura', '', ''),
 (27, 'Spicy Crunch Ebi ', '9.49', 'Five pieces. Deep fried spicy battered tiger prawn.', 'img/tempura/spicy-ebi-mayo.jpeg', 'Tempura', '', ''),
 (28, 'Apple Juice', '2.49', '250ml ', 'img/drinks/apple-juice.png', 'Drinks', '', ''),
