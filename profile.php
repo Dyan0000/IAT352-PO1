@@ -1,6 +1,6 @@
 <?php	
 	// include auth.php file on all secure pages
-	include("auth_sessionNotActiveCheck.php");
+	require_once("auth_sessionNotActiveCheck.php");
 ?>
 
 
