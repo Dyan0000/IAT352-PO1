@@ -93,7 +93,11 @@
 							$sql_02 = "UPDATE users SET firstname = '". $firstname. "', lastname = '". $lastname. "', email = '". $email. "' ";
 							$sql_02 .= "WHERE id = ". $userID;
 							mysqli_query($db, $sql_02);
-							array_push($update_errors, "Awesome! You have successfully updated your account information.");
+							$_SESSION['firstname'] = $firstname;
+							$_SESSION['lastname'] = $lastname;
+							$_SESSION['email'] = $email;
+							// array_push($update_errors, "Awesome! You have successfully updated your account information.");
+							header('location: profile.php');
 						}
 
 					 }

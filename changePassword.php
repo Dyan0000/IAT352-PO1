@@ -86,7 +86,8 @@
 									
 									// Check if there is a query error
 									if (!empty($result) && mysqli_affected_rows($db) == 1) {
-										array_push($manage_errors, "Awesome! You have successfully set up a new password. ");
+										// array_push($manage_errors, "Awesome! You have successfully set up a new password. ");
+										header('location: profile.php');
 									}
 									else { 
 										array_push($manage_errors, "Bummer! You failed to update your new password. ");
