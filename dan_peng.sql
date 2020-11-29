@@ -1,14 +1,11 @@
 -- phpMyAdmin SQL Dump
-CREATE DATABASE  `dan_peng`;
-USE `dan_peng`;
-
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 11, 2020 at 02:14 AM
+-- Generation Time: Nov 29, 2020 at 11:46 PM
 -- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- PHP Version: 7.2.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -22,6 +19,9 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `dan_peng`
+--
+CREATE DATABASE IF NOT EXISTS `dan_peng` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `dan_peng`;
 
 -- --------------------------------------------------------
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `dishes`
 --
 
+DROP TABLE IF EXISTS `dishes`;
 CREATE TABLE `dishes` (
   `dish_id` int(11) NOT NULL,
   `name` varchar(20) CHARACTER SET utf8mb4 NOT NULL,
@@ -39,6 +40,10 @@ CREATE TABLE `dishes` (
   `dietary` varchar(20) NOT NULL,
   `meat` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- RELATIONSHIPS FOR TABLE `dishes`:
+--
 
 --
 -- Dumping data for table `dishes`
@@ -61,11 +66,11 @@ INSERT INTO `dishes` (`dish_id`, `name`, `unit_price`, `description`, `img_path`
 (14, 'Kani Ume Oshi Sushi', '12.99', 'Real crab, prawn, ume oshi sauce, crispy capers, and ume dressing.', 'img/sushi/kani-ume.jpeg', 'Sushi', '', 'seafood'),
 (15, 'Salmon Oshi Sushi', '12.99', 'Sockeye salmon, oshi sauce, and jalapeno.', 'img/sushi/salmon.jpeg', 'Sushi', '', 'seafood'),
 (16, 'Tofu Sushi', '11.99', 'Seasoned soft tofu and soybean paper.', 'img/sushi/tofu.jpeg', 'Sushi', 'vegetarian', ''),
-(17, 'Unagi Oshi Sushi', '13.99', 'Double layer BBQ eel, sweet spicy miso, garlic chip, green onion, and sesame oil.\r\n', 'img/sushi/unagi.jpeg', 'Sushi', '', 'seafood'),
-(18, 'Yukke Tuna Sushi', '12.49', 'Soy marinated minced tuna and sweet onion sauce.', 'img/sushi/yukke-tuna.jpg', 'Sushi', '', 'seafood'),
-(19, 'Sime Saba Sushi', '12.99', 'Sweet vinegar marinated mackerel and katsuo miso sauce.', 'img/sushi/sime-saba.jpeg', 'Sushi', '', 'seafood'),
+(17, 'Unagi Oshi Sushi', '13.99', 'Double layer BBQ eel, sweet spicy miso, garlic chip, green onion, and sesame oil.\r\n', 'img/sushi/unagi.jpeg', 'Sushi', '', ''),
+(18, 'Yukke Tuna Sushi', '12.49', 'Soy marinated minced tuna and sweet onion sauce.', 'img/sushi/yukke-tuna.jpg', 'Sushi', '', ''),
+(19, 'Sime Saba Sushi', '12.99', 'Sweet vinegar marinated mackerel and katsuo miso sauce.', 'img/sushi/sime-saba.jpeg', 'Sushi', '', ''),
 (24, 'Assorted Tempura', '6.99', 'Two pieces prawn and four pieces veggie.', 'img/tempura/appetizer.jpeg', 'Tempura', '', ''),
-(25, 'Prawn Tempura', '8.99', '6 pieces of prawn tempura', 'img/tempura/prawn.jpeg', 'Tempura', '', 'seafood'),
+(25, 'Prawn Tempura', '8.99', '6 pieces of prawn tempura', 'img/tempura/prawn.jpeg', 'Tempura', '', ''),
 (26, 'Snapper Tempura', '9.49', 'Deep fried battered snapper, unagi $ wasabi sauce 6 pieces', 'img/tempura/snapper.jpeg', 'Tempura', '', ''),
 (27, 'Spicy Crunch Ebi ', '9.49', 'Five pieces. Deep fried spicy battered tiger prawn.', 'img/tempura/spicy-ebi-mayo.jpeg', 'Tempura', '', ''),
 (28, 'Apple Juice', '2.49', '250ml ', 'img/drinks/apple-juice.png', 'Drinks', '', ''),
@@ -77,14 +82,36 @@ INSERT INTO `dishes` (`dish_id`, `name`, `unit_price`, `description`, `img_path`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `like`
+--
+
+DROP TABLE IF EXISTS `like`;
+CREATE TABLE `like` (
+  `id` int(11) NOT NULL,
+  `dish_id` int(11) NOT NULL,
+  `category` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- RELATIONSHIPS FOR TABLE `like`:
+--
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `orders`
 --
 
+DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `order_id` int(11) NOT NULL,
   `order_date` date NOT NULL,
   `total_price` decimal(5,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- RELATIONSHIPS FOR TABLE `orders`:
+--
 
 -- --------------------------------------------------------
 
@@ -92,6 +119,7 @@ CREATE TABLE `orders` (
 -- Table structure for table `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `firstname` varchar(100) NOT NULL,
@@ -99,6 +127,17 @@ CREATE TABLE `users` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- RELATIONSHIPS FOR TABLE `users`:
+--
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`) VALUES
+(10012, 'Andrew', 'Lee', 'lee@sfu.ca', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
@@ -109,6 +148,12 @@ CREATE TABLE `users` (
 --
 ALTER TABLE `dishes`
   ADD PRIMARY KEY (`dish_id`);
+
+--
+-- Indexes for table `like`
+--
+ALTER TABLE `like`
+  ADD PRIMARY KEY (`id`,`dish_id`);
 
 --
 -- Indexes for table `orders`
@@ -142,7 +187,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10009;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10013;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
