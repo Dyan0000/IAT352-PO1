@@ -10,7 +10,7 @@
 					if (!isset($_SESSION['email'])) {
 						echo "<li><a href='register.php'>Sign up</a></li>";
 					} else {
-						echo "<li><a href='profile.php'>Profile</a></li>";
+						echo "<li><a href='profile.php'>Hello, ". $_SESSION['firstname']. " ". $_SESSION['lastname']."</a></li>";
 					}
 				?>
 			</ul>
