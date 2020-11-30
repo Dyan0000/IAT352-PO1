@@ -28,6 +28,36 @@
 		</div>
 	</section>
 
+	<!-- Recommendations for Registered Members -->
+	<?php
+		include('connect.php');
+		$query = "SELECT dishes.img_path, dishes.name FROM dishes ";
+		$query .= "INNER JOIN like_dish ON dishes.category = like_dish.category ";
+		$query .= "WHERE like_dish.id = ". $_SESSION['id']. ";";
+		// echo $query;
+		$query_result = mysqli_query($db, $query);
+		if (!$query_result) die("Database query failed.");
+		$num_rows = mysqli_num_rows($query_result); // check the number of retrieved data
+
+		if(isset($_SESSION['id']) && $num_rows > 0) {
+	
+			echo "<section><h2>You Might Like</h2><div class='container what-we-have'>";
+
+			$count = 0;
+			while ($row = mysqli_fetch_assoc($query_result)) {
+				if ($count < 5) {
+					echo "<figure class='item'>";
+					echo "<img src='". $row['img_path']. "'>";
+					echo "<figcaption class='home-category'>". $row['name']. "</figcaption>";
+					echo "</figure>";
+				}
+				$count++;
+			}
+			echo "</div></section>";
+			mysqli_free_result($query_result); // Release returned data
+		}
+	?>
+
 	<!-- Popular Dishes -->
 	<section>
 		<h2>Popular Dishes</h2>
@@ -84,3 +114,6 @@
 </body>
 
 </html>
+
+<?php mysqli_close($db); // Close database connection ?>
+

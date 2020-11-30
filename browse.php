@@ -54,7 +54,7 @@ session_start();
 
 
 
-				<div class="container_item">
+				<!-- <div class="container_item">
 					<div class="categories_img">
 						<img src="img/categories/ramen.svg">
 					</div>
@@ -63,7 +63,7 @@ session_start();
 						<p>Ramen</p>
 					</div>
 
-				</div>
+				</div> -->
 
 				<div class="container_item">
 					<div class="categories_img">
@@ -82,7 +82,7 @@ session_start();
 					</div>
 
 					<div class="categories_label">
-						<p>Nigiri</p>
+						<p>Sushi</p>
 					</div>
 
 				</div>
@@ -98,7 +98,7 @@ session_start();
 
 				</div>
 
-				<div class="container_item">
+				<!-- <div class="container_item">
 					<div class="categories_img">
 						<img src="img/categories/roll.svg">
 					</div>
@@ -107,7 +107,7 @@ session_start();
 						<p>Maki &amp; Roll</p>
 					</div>
 
-				</div>
+				</div> -->
 
 				<div class="container_item">
 					<div class="categories_img">
@@ -638,9 +638,8 @@ session_start();
 		// }
 	</script>
 
-
-
-
 </body>
-
 </html>
+
+<?php mysqli_close($db); // Close database connection ?>
+
