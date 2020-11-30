@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 29, 2020 at 11:46 PM
+-- Generation Time: Nov 30, 2020 at 04:17 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -82,19 +82,26 @@ INSERT INTO `dishes` (`dish_id`, `name`, `unit_price`, `description`, `img_path`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `like`
+-- Table structure for table `like_dish`
 --
 
-DROP TABLE IF EXISTS `like`;
-CREATE TABLE `like` (
+DROP TABLE IF EXISTS `like_dish`;
+CREATE TABLE `like_dish` (
   `id` int(11) NOT NULL,
   `dish_id` int(11) NOT NULL,
   `category` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- RELATIONSHIPS FOR TABLE `like`:
+-- RELATIONSHIPS FOR TABLE `like_dish`:
 --
+
+--
+-- Dumping data for table `like_dish`
+--
+
+INSERT INTO `like_dish` (`id`, `dish_id`, `category`) VALUES
+(10014, 6, 'Donburi');
 
 -- --------------------------------------------------------
 
@@ -137,7 +144,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`) VALUES
-(10012, 'Andrew', 'Lee', 'lee@sfu.ca', '202cb962ac59075b964b07152d234b70');
+(10014, 'Andrew', 'Lee', 'lee@sfu.ca', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
@@ -150,9 +157,9 @@ ALTER TABLE `dishes`
   ADD PRIMARY KEY (`dish_id`);
 
 --
--- Indexes for table `like`
+-- Indexes for table `like_dish`
 --
-ALTER TABLE `like`
+ALTER TABLE `like_dish`
   ADD PRIMARY KEY (`id`,`dish_id`);
 
 --
@@ -187,7 +194,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10013;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10015;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
