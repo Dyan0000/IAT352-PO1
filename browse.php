@@ -133,7 +133,13 @@ session_start();
 				<div class="price_range">
 					<h2 class="filter_title">Price Range</h2>
 
-					<label>
+					<!-- A hidden field let web developers include data that cannot be seen or modified by users when a form is submitted. -->
+					<input type="hidden" id="hidden_minimum_price" value="0">
+					<input type="hidden" id="hidden_maximum_price" value="16.99">
+					<p id="price_show">2.00 - 16.99</p> 
+					<div id="price_range"></div>
+
+					<!-- <label>
 						<input type="radio" name="price_filter" value="*" checked="checked">All
 					</label>
 
@@ -155,20 +161,15 @@ session_start();
 
 					<label>
 						<input type="radio" name="price_filter" value="*">&#36;20+
-					</label>
-
-
-
-
+					</label> -->
 				</div>
 
-				<div class="ratings">
+				<!-- <div class="ratings">
 					<h2 class="filter_title">Ratings</h2>
 
 					<label>
 						<input type="radio" name="rating_filter" value="*" checked="checked">Any
 					</label>
-
 
 					<label>
 						<input type="radio" name="rating_filter" value="gluten-free">&#10029;&#10029;&#10025;&#10025;&#10025;
@@ -185,32 +186,15 @@ session_start();
 					<label>
 						<input type="radio" name="rating_filter" value="no-peanut">&#10029;&#10029;&#10029;&#10029;&#10029;
 					</label>
-
-				</div>
+				</div> -->
 
 				<div class="dietary">
 					<h2 class="filter_title">Dietary</h2>
-
-					<label>
-						<input type="radio" name="diet_filter" value="*" checked="checked">All
-					</label>
-
-					<label>
-						<input type="radio" name="diet_filter" value="gluten-free">Gluten-free
-					</label>
-
-					<label>
-						<input type="radio" name="diet_filter" value="vegeterian">Vegeterian
-					</label>
-
-					<label>
-						<input type="radio" name="diet_filter" value="no-soy">No soy
-					</label>
-
-					<label>
-						<input type="radio" name="diet_filter" value="no-peanut">No peanut
-					</label>
-
+					<label><input type="radio" name="diet_filter" value="*" checked="checked">All</label>
+					<!-- <label><input type="radio" name="diet_filter" value="gluten-free">Gluten-free</label> -->
+					<label><input type="radio" name="diet_filter" value="vegeterian">Vegeterian</label>
+					<label><input type="radio" name="diet_filter" value="no-soy">No Soy</label>
+					<label><input type="radio" name="diet_filter" value="no-peanut">No Peanut</label>
 				</div>
 
 			</div>
@@ -265,9 +249,6 @@ session_start();
 				$dishes = get_starters();
 
 				?>
-
-
-
 
 
 				</div>
@@ -504,13 +485,6 @@ session_start();
 
 				</div>
 
-
-
-
-
-
-	
-
 			</div>
 
 
@@ -555,7 +529,7 @@ session_start();
 
 	</div>
 
-
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript">
 		// modal content
 
@@ -575,16 +549,6 @@ session_start();
 			$(".item_modal").hide(); //Hide pop up
 
 		});
-
-
-
-
-
-
-
-
-
-
 
 		// // get overlay
 
