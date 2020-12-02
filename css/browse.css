@@ -170,10 +170,9 @@ img.logo {
 	color:white;
 	padding:0.5em 0.875em;
 	background-color:#231F20; 
-
 }
 
-.price_range >label, .ratings > label , .dietary > label{
+.price_range > label, .meat > label , .dietary > label{
 	display: block;
 	padding-bottom:0.4em;
 }
@@ -211,19 +210,13 @@ img.logo {
 }
 
 .item_image{	
-
-
-
 	height:152px;
 	width: 152px;
-
-
 }
 
 .item_image img{
 	height:100%;
 	width:100%;
-
 }
 
 
@@ -240,7 +233,6 @@ img.logo {
 .item_price{
 	padding-top:1em;
 }
-
 
 
 /*styling for popup modal*/
@@ -327,5 +319,13 @@ img.logo {
 .order_bt{
 	width:50%;
 }
+
+/* Loading Animation */
+#loading {
+	text-align: center;
+	background: url('img/loader.gif') no-repeat center;
+	height: 9em;
+}
+
 
 
