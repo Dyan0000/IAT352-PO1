@@ -13,6 +13,8 @@ session_start();
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/browse.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script src="js/jquery-ui.js"></script>
+	<link href = "css/jquery-ui.css" rel = "stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<title>Menu</title>
 </head>
@@ -120,8 +122,11 @@ session_start();
 					<!-- A hidden field let web developers include data that cannot be seen or modified by users when a form is submitted. -->
 					<input type="hidden" id="hidden_minimum_price" value="0">
 					<input type="hidden" id="hidden_maximum_price" value="17">
-					<p id="display_price">2.00 - 17.00</p> 
+					<p id="display_price">$2.00 - $17.00</p> 
 					<div id="slider_range"></div>
+					<!-- <input type="range" id="slider_range"></input> -->
+					
+
 				</div>
 
 				<div class="meat">
@@ -199,7 +204,7 @@ session_start();
 
 
 				}
-				$dishes = get_starters();
+				// $dishes = get_starters();
 
 				?>
 
@@ -246,7 +251,7 @@ session_start();
 
 
 				}
-				$dishes = get_donburi();
+				// $dishes = get_donburi();
 
 				?>
 
@@ -294,7 +299,7 @@ session_start();
 
 
 				}
-				$dishes = get_sashimi();
+				// $dishes = get_sashimi();
 
 				?>
 
@@ -342,7 +347,7 @@ session_start();
 
 
 				}
-				$dishes = get_sushi();
+				// $dishes = get_sushi();
 
 				?>
 
@@ -390,7 +395,7 @@ session_start();
 
 
 				}
-				$dishes = get_tempura();
+				// $dishes = get_tempura();
 
 				?>
 
@@ -438,7 +443,7 @@ session_start();
 
 
 				}
-				$dishes = get_drinks();
+				// $dishes = get_drinks();
 
 				?>
 
