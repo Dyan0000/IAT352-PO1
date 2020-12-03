@@ -134,9 +134,9 @@ session_start();
 					<h2 class="filter_title">Price Range</h2>
 
 					<!-- A hidden field let web developers include data that cannot be seen or modified by users when a form is submitted. -->
-					<input type="hidden" id="hidden_minimum_price" value="0">
-					<input type="hidden" id="hidden_maximum_price" value="16.99">
-					<p id="price_show">2.00 - 16.99</p> 
+					<input type="hidden" id="hidden_minimum_price" value="2">
+					<input type="hidden" id="hidden_maximum_price" value="17">
+					<p id="price_show">2.00 - 17.00</p> 
 					<div id="price_range"></div>
 
 					<!-- <label>
@@ -188,7 +188,7 @@ session_start();
 					</label>
 				</div> -->
 
-				<div class="ratings">
+				<div class="meat">
 					<h2 class="filter_title">Meat</h2>
 					<?php
 					 $query = "SELECT DISTINCT meat FROM dishes ORDER BY meat ASC";
