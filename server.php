@@ -4,7 +4,6 @@
 	// variable declaration
 	$firstname = "";
 	$lastname = "";
-	// $username = "";
 	$email = "";
 	$errors = array(); 
 
@@ -16,7 +15,6 @@
 		// receive all input values from the form
 		$firstname = mysqli_real_escape_string($db, $_POST['first_name']);
 		$lastname = mysqli_real_escape_string($db, $_POST['last_name']);
-		// $username = mysqli_real_escape_string($db, $_POST['username']);
 		$email = mysqli_real_escape_string($db, $_POST['email']);
 		$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
 		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
@@ -28,7 +26,6 @@
 		// form validation: ensure that the form is correctly filled
 		if (empty($firstname)) array_push($errors, "First name is required.");
 		if (empty($lastname)) array_push($errors, "Last name is required.");
-		// if (empty($username)) array_push($errors, "Username is required");
 		if (empty($email)) array_push($errors, "Email is required.");
 		if (empty($password_1)) array_push($errors, "Password is required.");
 

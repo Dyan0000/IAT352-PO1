@@ -24,21 +24,26 @@ session_start();
 	<section class="browse_layout">
 		<section class="browse_categories">
 
-			<div class="categories_container container">
+			<div class="categories_container container" id="myBtnContainer">
 
 				<div class="container_item">
+				<button class="btn active" onclick="filterSelection('sstarters')"> 
 					<div class="categories_img">
 						<img src="img/categories/starters.svg">
 					</div>
-
 					<div class="categories_label">
 						<p>Starters</p>
+
 					</div>
+				</button>
+
+				
 
 				</div>
 
 
 				<div class="container_item">
+				<button class="btn" onclick="filterSelection('ddonburi')"> 
 					<div class="categories_img">
 						<img src="img/categories/donburi.svg">
 					</div>
@@ -46,21 +51,11 @@ session_start();
 					<div class="categories_label">
 						<p>Donburi</p>
 					</div>
-
+				</button>
 				</div>
 
-				<!-- <div class="container_item">
-					<div class="categories_img">
-						<img src="img/categories/ramen.svg">
-					</div>
-
-					<div class="categories_label">
-						<p>Ramen</p>
-					</div>
-
-				</div> -->
-
 				<div class="container_item">
+				<button class="btn" onclick="filterSelection('ssashimi')">
 					<div class="categories_img">
 						<img src="img/categories/sashimi.svg">
 					</div>
@@ -68,10 +63,11 @@ session_start();
 					<div class="categories_label">
 						<p>Sashimi</p>
 					</div>
-
+				</button>
 				</div>
 
 				<div class="container_item">
+				<button class="btn" onclick="filterSelection('ssushi')">
 					<div class="categories_img">
 						<img src="img/categories/nigiri.svg">
 					</div>
@@ -79,10 +75,11 @@ session_start();
 					<div class="categories_label">
 						<p>Sushi</p>
 					</div>
-
+				</button>
 				</div>
 
 				<div class="container_item">
+				<button class="btn" onclick="filterSelection('ttempura')">
 					<div class="categories_img">
 						<img src="img/categories/tempura.svg">
 					</div>
@@ -90,21 +87,11 @@ session_start();
 					<div class="categories_label">
 						<p>Tempura</p>
 					</div>
-
+				</button>
 				</div>
 
-				<!-- <div class="container_item">
-					<div class="categories_img">
-						<img src="img/categories/roll.svg">
-					</div>
-
-					<div class="categories_label">
-						<p>Maki &amp; Roll</p>
-					</div>
-
-				</div> -->
-
 				<div class="container_item">
+				<button class="btn" onclick="filterSelection('ddrinks')">
 					<div class="categories_img">
 						<img src="img/categories/drinks.svg">
 					</div>
@@ -112,8 +99,10 @@ session_start();
 					<div class="categories_label">
 						<p>Drinks</p>
 					</div>
-
+				</button>
 				</div>
+				
+			</div>
 
 		</section>
 
@@ -164,15 +153,15 @@ session_start();
 
 
 			<div class="menu_section col-2-3">
-
+			<div class="filterDiv all">
 				<div class="filter_data"></div>
 
 				<hr />
-
+			</div>
 				<!-- starters -->
-
+				<div class="filterDiv sstarters">
 				<div class="list_title">
-					<h1 class="heading2">Starters</h1>
+					<h1 class="heading2" id="Starters">Starters</h1>
 				</div>
 
 
@@ -216,8 +205,9 @@ session_start();
 
 
 				</div>
-
+				</div>
 				<!-- Donburi -->
+				<div class="filterDiv ddonburi">
 				<div class="list_title">
 					<h1 class="heading2">Donburi</h1>
 				</div>
@@ -262,8 +252,10 @@ session_start();
 
 
 				</div>
+				</div>
 
 				<!-- Sashimi -->
+				<div class="filterDiv ssashimi">
 				<div class="list_title">
 					<h1 class="heading2">Sashimi</h1>
 				</div>
@@ -308,8 +300,10 @@ session_start();
 
 
 				</div>
+				</div>
 
 				<!-- Sushi -->
+				<div class="filterDiv ssushi">
 				<div class="list_title">
 					<h1 class="heading2">Sushi</h1>
 				</div>
@@ -354,9 +348,10 @@ session_start();
 
 
 				</div>
-
+				</div>
 
 				<!-- Tempura -->
+				<div class="filterDiv ttempura">
 				<div class="list_title">
 					<h1 class="heading2">Tempura</h1>
 				</div>
@@ -401,9 +396,10 @@ session_start();
 
 
 				</div>
-
+				</div>
 
 				<!-- Drinks -->
+				<div class="filterDiv ddrinks">
 				<div class="list_title">
 					<h1 class="heading2">Drinks</h1>
 				</div>
@@ -447,6 +443,7 @@ session_start();
 				?>
 
 
+				</div>
 				</div>
 
 			</div>
@@ -495,7 +492,50 @@ session_start();
 
 	</div>
 
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
 
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
 
 	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -517,10 +557,12 @@ session_start();
 
 		$(".close").click(function() {
 			$(".overlay").hide();
-			$(".item_modal").hide(); //Hide pop up
+			$(".item_modal").hide(); 
 
 		});
 	</script>
+
+
 
 </body>
 </html>
