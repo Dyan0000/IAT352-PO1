@@ -3,7 +3,6 @@ require_once("connect.php");
 session_start();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,8 +38,6 @@ session_start();
 				</div>
 
 
-
-
 				<div class="container_item">
 					<div class="categories_img">
 						<img src="img/categories/donburi.svg">
@@ -51,8 +48,6 @@ session_start();
 					</div>
 
 				</div>
-
-
 
 				<!-- <div class="container_item">
 					<div class="categories_img">
@@ -120,11 +115,12 @@ session_start();
 
 				</div>
 
-
-
 		</section>
 
+
 		<section class="main">
+
+			<!-- Filter Section -->
 
 			<div class="filter_section col-1-3">
 
@@ -132,78 +128,46 @@ session_start();
 
 				<div class="price_range">
 					<h2 class="filter_title">Price Range</h2>
-
 					<!-- A hidden field let web developers include data that cannot be seen or modified by users when a form is submitted. -->
 					<input type="hidden" id="hidden_minimum_price" value="0">
-					<input type="hidden" id="hidden_maximum_price" value="16.99">
-					<p id="price_show">2.00 - 16.99</p> 
-					<div id="price_range"></div>
-
-					<!-- <label>
-						<input type="radio" name="price_filter" value="*" checked="checked">All
-					</label>
-
-					<label>
-						<input type="radio" name="price_filter" value="*">&#36;0-&#36;5
-					</label>
-
-					<label>
-						<input type="radio" name="price_filter" value="*">&#36;5-&#36;10
-					</label>
-
-					<label>
-						<input type="radio" name="price_filter" value="*">&#36;10-&#36;15
-					</label>
-
-					<label>
-						<input type="radio" name="price_filter" value="*">&#36;15-&#36;20
-					</label>
-
-					<label>
-						<input type="radio" name="price_filter" value="*">&#36;20+
-					</label> -->
+					<input type="hidden" id="hidden_maximum_price" value="17">
+					<p id="display_price">2.00 - 17.00</p> 
+					<div id="slider_range"></div>
 				</div>
 
-				<!-- <div class="ratings">
-					<h2 class="filter_title">Ratings</h2>
-
-					<label>
-						<input type="radio" name="rating_filter" value="*" checked="checked">Any
-					</label>
-
-					<label>
-						<input type="radio" name="rating_filter" value="gluten-free">&#10029;&#10029;&#10025;&#10025;&#10025;
-					</label>
-
-					<label>
-						<input type="radio" name="rating_filter" value="vegeterian">&#10029;&#10029;&#10029;&#10025;&#10025;
-					</label>
-
-					<label>
-						<input type="radio" name="rating_filter" value="no-soy">&#10029;&#10029;&#10029;&#10029;&#10025;
-					</label>
-
-					<label>
-						<input type="radio" name="rating_filter" value="no-peanut">&#10029;&#10029;&#10029;&#10029;&#10029;
-					</label>
-				</div> -->
+				<div class="meat">
+					<h2 class="filter_title">Meat</h2>
+					<?php
+					 $query01 = "SELECT DISTINCT meat FROM dishes ORDER BY meat ASC";
+					 $result01 = mysqli_query($db,$query01);
+					 while ($row = mysqli_fetch_assoc($result01)) {
+					 	if (!empty($row['meat'])) 
+					 		echo "<label><input type='checkbox' class='checkbox-option meat' value='". $row['meat']. "'>". $row['meat']. "</label>";
+					 }
+					?>
+				</div>
 
 				<div class="dietary">
 					<h2 class="filter_title">Dietary</h2>
-					<label><input type="radio" name="diet_filter" value="*" checked="checked">All</label>
-					<!-- <label><input type="radio" name="diet_filter" value="gluten-free">Gluten-free</label> -->
-					<label><input type="radio" name="diet_filter" value="vegeterian">Vegeterian</label>
-					<label><input type="radio" name="diet_filter" value="no-soy">No Soy</label>
-					<label><input type="radio" name="diet_filter" value="no-peanut">No Peanut</label>
+					<?php
+					 $query02 = "SELECT DISTINCT dietary FROM dishes ORDER BY dietary ASC";
+					 $result02 = mysqli_query($db,$query02);
+					 while ($row = mysqli_fetch_assoc($result02)) {
+					 	if (!empty($row['dietary'])) 
+					 		echo "<label><input type='checkbox' class='checkbox-option dietary' value='". $row['dietary']. "'>". $row['dietary']. "</label>";
+					 }
+					?>
 				</div>
 
-			</div>
+			</div> <!-- end of filter_section -->
+
+
 
 			<div class="menu_section col-2-3">
 
+				<div class="filter_data"></div>
 
-
-
+				<hr />
 
 				<!-- starters -->
 
@@ -494,6 +458,8 @@ session_start();
 
 	<?php include('footer.php'); ?>
 
+	
+
 	<!-- menu item popup modal -->
 
 	<!-- overlay -->
@@ -529,7 +495,12 @@ session_start();
 
 	</div>
 
+
+
 	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/filter.js"></script>
+
 	<script type="text/javascript">
 		// modal content
 
@@ -549,61 +520,10 @@ session_start();
 			$(".item_modal").hide(); //Hide pop up
 
 		});
-
-		// // get overlay
-
-		// var overlay = document.getElementById("overlay");
-
-		// // get modal
-		// var modal = document.getElementById("itemModal");
-
-		// // menu item as trigger
-		// var menuItem = document.getElementsByClassName("menu_item")[0];
-		// var menuItem1 = document.getElementsByClassName("menu_item")[1];
-		// var menuItem2 = document.getElementsByClassName("menu_item")[2];
-		// var menuItem3 = document.getElementsByClassName("menu_item")[3];
-
-		// // close the modal
-
-		// var x_button = document.getElementsByClassName("close")[0];
-
-		// // when user clicks menu item
-
-		// menuItem.onclick = function(){
-		// 	overlay.style.display = "block";
-		// 	modal.style.display = "block";
-		// }
-		// menuItem1.onclick = function(){
-		// 	overlay.style.display = "block";
-		// 	modal.style.display = "block";
-		// }
-		// menuItem2.onclick = function(){
-		// 	overlay.style.display = "block";
-		// 	modal.style.display = "block";
-		// }
-		// menuItem3.onclick = function(){
-		// 	overlay.style.display = "block";
-		// 	modal.style.display = "block";
-		// }
-
-		// // when user clicks close button
-
-		// x_button.onclick = function(){
-		// 	overlay.style.display = "none";
-		// 	modal.style.display = "none";
-		// }
-
-		// // when user clicks outside of the modal
-		// overlay.onclick = function(event){
-		// 	if(event.target == overlay){
-		// 		overlay.style.display = "none";
-		// 		modal.style.display = "none";
-		// 	}
-		// }
 	</script>
 
 </body>
 </html>
 
-<?php mysqli_close($db); // Close database connection ?>
+<?php mysqli_close($db); ?>
 

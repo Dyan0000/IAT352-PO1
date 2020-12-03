@@ -30,6 +30,7 @@
 
 	<!-- Recommendations for Registered Members -->
 	<?php
+	If (isset($_SESSION['id'])) {
 		include('connect.php');
 		$query = "SELECT dishes.img_path, dishes.name FROM dishes ";
 		$query .= "INNER JOIN like_dish ON dishes.category = like_dish.category ";
@@ -55,7 +56,9 @@
 			}
 			echo "</div></section>";
 			mysqli_free_result($query_result); // Release returned data
+			mysqli_close($db);
 		}
+	}
 	?>
 
 	<!-- Popular Dishes -->
@@ -114,6 +117,4 @@
 </body>
 
 </html>
-
-<?php mysqli_close($db); // Close database connection ?>
 
