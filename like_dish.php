@@ -23,6 +23,7 @@ if (isset($_POST['action'])) {
 			while ($row = mysqli_fetch_assoc($search_result)) {
 				$delete_sql = "DELETE FROM like_dish WHERE ";
 				$delete_sql .= "like_dish.id = '". $_SESSION['id']. "' AND like_dish.dish_id = '". $row['dish_id']."';";
+				mysqli_query($db, $delete_sql);
 				echo "Like";
 			}
 		}
