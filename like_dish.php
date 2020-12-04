@@ -22,7 +22,7 @@ if (isset($_POST['action'])) {
 			// If users don't like this dish any more, remove this data from the like_dish table
 			while ($row = mysqli_fetch_assoc($search_result)) {
 				$delete_sql = "DELETE FROM like_dish WHERE ";
-				$delete_sql .= "id = '". $_SESSION['id']. "' AND dish_id = '". $row['dish_id']."';";
+				$delete_sql .= "like_dish.id = '". $_SESSION['id']. "' AND like_dish.dish_id = '". $row['dish_id']."';";
 				echo "Like";
 			}
 		}
