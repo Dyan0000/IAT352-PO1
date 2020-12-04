@@ -256,33 +256,14 @@ for (var i = 0; i < btns.length; i++) {
 }
 </script>
 
-	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<!-- // <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script> -->
+
+	<!-- For price range slider -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+	<script type="text/javascript" src="js/modal.js"></script>
 	<script type="text/javascript" src="js/filter.js"></script>
 	<script type="text/javascript" src="js/like.js"></script>
-
-	<script type="text/javascript">
-		// modal content
-
-		$(".menu_item").click(function() {
-			$(".item_modal").find(".modal_title").text($(this).find(".item_name").text());
-			$(".item_modal").find(".modal_description").text($(this).find(".item_description").text());
-			$(".item_modal").find(".modal_price").text($(this).find(".item_price").text());
-			$(".item_modal").find(".modal_image").attr("src", $(this).find(".item_image img").attr("src"));
-
-
-			$(".overlay").show();
-			$(".item_modal").show();
-		});
-
-		$(".close").click(function() {
-			$(".overlay").hide();
-			$(".item_modal").hide(); 
-
-		});
-	</script>
-
-
 
 </body>
 </html>

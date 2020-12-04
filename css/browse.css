@@ -206,17 +206,15 @@ img.logo {
 /*menu single item*/
 
 .menu_item{
-
 	border:1px solid #d3d2d2;
-	
 	display: flex;
 	cursor: pointer;
-
 }
 
 .item_image{	
 	height:152px;
 	width: 152px;
+	/*cursor: pointer;*/
 }
 
 .item_image img{
@@ -255,13 +253,12 @@ img.logo {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 10;
+  z-index: 20;
   background-color: rgba(0,0,0,0.5); /*dim the background*/
 }
 
 .item_modal{
 	display: none;
-
 
 	width: 500px;
     height: auto;
@@ -275,8 +272,8 @@ img.logo {
     background-color: #fff;
     border-radius: 5px;
     text-align: left;
-    z-index: 11;
-    padding:20px;
+    z-index: 22;
+    padding: 20px;
 
 
 	/*position:relative;
@@ -287,7 +284,7 @@ img.logo {
 	
 	overflow:auto;*/
 
-	  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .modal_content{
