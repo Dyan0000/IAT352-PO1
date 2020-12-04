@@ -7,6 +7,16 @@ if (isset($_POST['action'])) {
 	
 	$sql = "SELECT * FROM dishes ";
 	$length = strlen($sql);
+
+	if (isset($_POST['category'])) {
+		$category_filter = implode("','", $_POST["category"]);
+		if (strlen($sql) == $length) $sql .= "WHERE ";
+		else $sql .= "AND ";
+		$sql .= "category IN ('". $category_filter. "') ";
+	}
+
+
+
 	
 	if (isset($_POST['minimum_price'], $_POST['maximum_price']) &&
 		!empty($_POST['minimum_price']) && !empty($_POST['maximum_price'])) {
@@ -29,13 +39,7 @@ if (isset($_POST['action'])) {
 		$sql .= "dietary IN ('". $dietary_filter. "') ";
 	}
 
-	if (isset($_POST['category'])) {
-		$category_filter = implode("','", $_POST["category"]);
-		if (strlen($sql) == $length) $sql .= "WHERE ";
-		else $sql .= "AND ";
-		$sql .= "category IN ('". $category_filter. "') ";
-	}
-
+	
 	// echo $sql;
 	$result = mysqli_query($db, $sql);
 	if (!$result) die("!! Database query failed !!");
