@@ -28,76 +28,18 @@ session_start();
 
 			<div class="categories_container container" id="myBtnContainer">
 
-				<div class="container_item">
-				<button class="btn active" onclick="filterSelection('sstarters')"> 
-					<div class="categories_img">
-						<img src="img/categories/starters.svg">
-					</div>
-					<div class="categories_label">
-						<p>Starters</p>
-					</div>
-				</button>
+				<div class="category">
+					<!-- <h2 class="filter_title">Category</h2> -->
+					<?php
+					 $query03 = "SELECT DISTINCT category FROM dishes ORDER BY category ASC";
+					 $result03 = mysqli_query($db,$query03);
+					 while ($row = mysqli_fetch_assoc($result03)) {
+					 	if (!empty($row['category'])) 
+					 		echo "<label><input type='checkbox' class='checkbox-option category' value='". $row['category']. "'>". $row['category']. "</label>";
+					 }
+					?>
 				</div>
 
-
-				<div class="container_item">
-				<button class="btn" onclick="filterSelection('ddonburi')"> 
-					<div class="categories_img">
-						<img src="img/categories/donburi.svg">
-					</div>
-					<div class="categories_label">
-						<p>Donburi</p>
-					</div>
-				</button>
-				</div>
-
-
-				<div class="container_item">
-				<button class="btn" onclick="filterSelection('ssashimi')">
-					<div class="categories_img">
-						<img src="img/categories/sashimi.svg">
-					</div>
-					<div class="categories_label">
-						<p>Sashimi</p>
-					</div>
-				</button>
-				</div>
-
-
-				<div class="container_item">
-				<button class="btn" onclick="filterSelection('ssushi')">
-					<div class="categories_img">
-						<img src="img/categories/nigiri.svg">
-					</div>
-					<div class="categories_label">
-						<p>Sushi</p>
-					</div>
-				</button>
-				</div>
-
-
-				<div class="container_item">
-				<button class="btn" onclick="filterSelection('ttempura')">
-					<div class="categories_img">
-						<img src="img/categories/tempura.svg">
-					</div>
-					<div class="categories_label">
-						<p>Tempura</p>
-					</div>
-				</button>
-				</div>
-
-
-				<div class="container_item">
-				<button class="btn" onclick="filterSelection('ddrinks')">
-					<div class="categories_img">
-						<img src="img/categories/drinks.svg">
-					</div>
-					<div class="categories_label">
-						<p>Drinks</p>
-					</div>
-				</button>
-				</div>
 				
 			</div>
 		</section>
@@ -111,17 +53,6 @@ session_start();
 
 				<h1 class="heading2">Sort by</h1>
 
-				<div class="category">
-					<h2 class="filter_title">Category</h2>
-					<?php
-					 $query03 = "SELECT DISTINCT category FROM dishes ORDER BY category ASC";
-					 $result03 = mysqli_query($db,$query03);
-					 while ($row = mysqli_fetch_assoc($result03)) {
-					 	if (!empty($row['category'])) 
-					 		echo "<label><input type='checkbox' class='checkbox-option category' value='". $row['category']. "'>". $row['category']. "</label>";
-					 }
-					?>
-				</div>
 
 				<div class="price_range">
 					<h2 class="filter_title">Price Range</h2>
@@ -131,6 +62,8 @@ session_start();
 					<div id="slider_range"></div>
 					<p id="display_price">$2.00 - $17.00</p> 
 				</div>
+
+
 
 				<div class="meat">
 					<h2 class="filter_title">Meat</h2>
