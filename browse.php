@@ -136,7 +136,7 @@ session_start();
 				<div class="order_bt pr_bt">Order</div>
 				<?php
 					if (isset($_SESSION['id'])) {
-						echo "<div class='like_dish'>Like This</div>";
+						echo "<div class='like_dish'>Like</div>";
 					}
 				?>
 			</div>

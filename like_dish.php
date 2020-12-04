@@ -11,7 +11,7 @@ if (isset($_POST['action'])) {
 	if ($num_result > 0) {
 
 		// If users start to like this dish, add this data to the like_dish table
-		if ($_POST['if_like'] == "Like This") {
+		if ($_POST['if_like'] == "Like") {
 			while ($row = mysqli_fetch_assoc($search_result)) {
 				$insert_sql = "INSERT INTO like_dish (`id`, `dish_id`, `category`) ";
 				$insert_sql .= "VALUES ('". $_SESSION['id']. "', '". $row['dish_id']. "', '". $row['category']. "');";
