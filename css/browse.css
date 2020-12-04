@@ -174,7 +174,10 @@ img.logo {
 	background-color:#231F20; 
 }
 
-.price_range > label, .meat > label , .dietary > label{
+.category > label,
+.price_range > label,
+.meat > label,
+.dietary > label{
 	display: block;
 	padding-bottom:0.4em;
 }
@@ -234,6 +237,12 @@ img.logo {
 
 .item_price{
 	padding-top:1em;
+}
+
+#item_like{
+	cursor: pointer;
+	text-decoration: underline;
+	color: #231F20;
 }
 
 
@@ -335,6 +344,7 @@ img.logo {
 .show {
 	display: block;
   }
+
 /* Style the buttons */
 .btn {
 	border: none;

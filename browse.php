@@ -35,12 +35,8 @@ session_start();
 					</div>
 					<div class="categories_label">
 						<p>Starters</p>
-
 					</div>
 				</button>
-
-				
-
 				</div>
 
 
@@ -49,55 +45,54 @@ session_start();
 					<div class="categories_img">
 						<img src="img/categories/donburi.svg">
 					</div>
-
 					<div class="categories_label">
 						<p>Donburi</p>
 					</div>
 				</button>
 				</div>
 
+
 				<div class="container_item">
 				<button class="btn" onclick="filterSelection('ssashimi')">
 					<div class="categories_img">
 						<img src="img/categories/sashimi.svg">
 					</div>
-
 					<div class="categories_label">
 						<p>Sashimi</p>
 					</div>
 				</button>
 				</div>
 
+
 				<div class="container_item">
 				<button class="btn" onclick="filterSelection('ssushi')">
 					<div class="categories_img">
 						<img src="img/categories/nigiri.svg">
 					</div>
-
 					<div class="categories_label">
 						<p>Sushi</p>
 					</div>
 				</button>
 				</div>
 
+
 				<div class="container_item">
 				<button class="btn" onclick="filterSelection('ttempura')">
 					<div class="categories_img">
 						<img src="img/categories/tempura.svg">
 					</div>
-
 					<div class="categories_label">
 						<p>Tempura</p>
 					</div>
 				</button>
 				</div>
 
+
 				<div class="container_item">
 				<button class="btn" onclick="filterSelection('ddrinks')">
 					<div class="categories_img">
 						<img src="img/categories/drinks.svg">
 					</div>
-
 					<div class="categories_label">
 						<p>Drinks</p>
 					</div>
@@ -105,7 +100,6 @@ session_start();
 				</div>
 				
 			</div>
-
 		</section>
 
 
@@ -117,16 +111,25 @@ session_start();
 
 				<h1 class="heading2">Sort by</h1>
 
+				<div class="category">
+					<h2 class="filter_title">Category</h2>
+					<?php
+					 $query03 = "SELECT DISTINCT category FROM dishes ORDER BY category ASC";
+					 $result03 = mysqli_query($db,$query03);
+					 while ($row = mysqli_fetch_assoc($result03)) {
+					 	if (!empty($row['category'])) 
+					 		echo "<label><input type='checkbox' class='checkbox-option category' value='". $row['category']. "'>". $row['category']. "</label>";
+					 }
+					?>
+				</div>
+
 				<div class="price_range">
 					<h2 class="filter_title">Price Range</h2>
 					<!-- A hidden field let web developers include data that cannot be seen or modified by users when a form is submitted. -->
 					<input type="hidden" id="hidden_minimum_price" value="0">
 					<input type="hidden" id="hidden_maximum_price" value="17">
-					<p id="display_price">$2.00 - $17.00</p> 
 					<div id="slider_range"></div>
-					<!-- <input type="range" id="slider_range"></input> -->
-					
-
+					<p id="display_price">$2.00 - $17.00</p> 
 				</div>
 
 				<div class="meat">
@@ -156,311 +159,22 @@ session_start();
 			</div> <!-- end of filter_section -->
 
 
-
+			<!-- Filtered Dishes -->
 			<div class="menu_section col-2-3">
-			<div class="filterDiv all">
-				<div class="filter_data"></div>
-
-				<hr />
-			</div>
-				<!-- starters -->
-				<div class="filterDiv sstarters">
-				<div class="list_title">
-					<h1 class="heading2" id="Starters">Starters</h1>
+			
+				<div class="filterDiv all">
+					<div class="filter_data"></div>
 				</div>
-
-
-				<div class="menu_list grid">
-
-				<?php
-
-
-				function get_starters(){
-					global $db;
-					$ret = array();
-					$sql = "SELECT * FROM dishes WHERE category='Starters'";
-					$result = mysqli_query($db, $sql);
-
-					while($ar = mysqli_fetch_assoc($result)){
-						$ret[] = $ar;
-
-
-						echo '
-						<div id="menuItem" class="menu_item">
-
-						<div class="item_image">
-							<img src=" '.$ar['img_path'].' " alt="food image">
-						</div>
-
-						<div class="item_text">
-							<div class="item_name"> '.$ar['name'].' </div>
-							<div class="item_description text-body-sml"> '.$ar['description'].' </div>
-							<div class="item_price"> '.$ar['unit_price'].' </div>
-						</div>
-
-					</div>';
-					}
-					return $ret;
-
-
-				}
-				// $dishes = get_starters();
-
-				?>
-
-
-				</div>
-				</div>
-				<!-- Donburi -->
-				<div class="filterDiv ddonburi">
-				<div class="list_title">
-					<h1 class="heading2">Donburi</h1>
-				</div>
-
-				<div class="menu_list grid">
-
-				<?php
-
-
-				function get_donburi(){
-					global $db;
-					$ret = array();
-					$sql = "SELECT * FROM dishes WHERE category='Donburi'";
-					$result = mysqli_query($db, $sql);
-
-					while($ar = mysqli_fetch_assoc($result)){
-						$ret[] = $ar;
-
-
-						echo '
-						<div id="menuItem" class="menu_item">
-
-						<div class="item_image">
-							<img src=" '.$ar['img_path'].' " alt="food image">
-						</div>
-
-						<div class="item_text">
-							<div class="item_name"> '.$ar['name'].' </div>
-							<div class="item_description text-body-sml"> '.$ar['description'].' </div>
-							<div class="item_price"> '.$ar['unit_price'].' </div>
-						</div>
-
-					</div>';
-					}
-					return $ret;
-
-
-				}
-				// $dishes = get_donburi();
-
-				?>
-
-
-				</div>
-				</div>
-
-				<!-- Sashimi -->
-				<div class="filterDiv ssashimi">
-				<div class="list_title">
-					<h1 class="heading2">Sashimi</h1>
-				</div>
-
-				<div class="menu_list grid">
-
-				<?php
-
-
-				function get_sashimi(){
-					global $db;
-					$ret = array();
-					$sql = "SELECT * FROM dishes WHERE category='Sashimi'";
-					$result = mysqli_query($db, $sql);
-
-					while($ar = mysqli_fetch_assoc($result)){
-						$ret[] = $ar;
-
-
-						echo '
-						<div id="menuItem" class="menu_item">
-
-						<div class="item_image">
-							<img src=" '.$ar['img_path'].' " alt="food image">
-						</div>
-
-						<div class="item_text">
-							<div class="item_name"> '.$ar['name'].' </div>
-							<div class="item_description text-body-sml"> '.$ar['description'].' </div>
-							<div class="item_price"> '.$ar['unit_price'].' </div>
-						</div>
-
-					</div>';
-					}
-					return $ret;
-
-
-				}
-				// $dishes = get_sashimi();
-
-				?>
-
-
-				</div>
-				</div>
-
-				<!-- Sushi -->
-				<div class="filterDiv ssushi">
-				<div class="list_title">
-					<h1 class="heading2">Sushi</h1>
-				</div>
-
-				<div class="menu_list grid">
-
-				<?php
-
-
-				function get_sushi(){
-					global $db;
-					$ret = array();
-					$sql = "SELECT * FROM dishes WHERE category='Sushi'";
-					$result = mysqli_query($db, $sql);
-
-					while($ar = mysqli_fetch_assoc($result)){
-						$ret[] = $ar;
-
-
-						echo '
-						<div id="menuItem" class="menu_item">
-
-						<div class="item_image">
-							<img src=" '.$ar['img_path'].' " alt="food image">
-						</div>
-
-						<div class="item_text">
-							<div class="item_name"> '.$ar['name'].' </div>
-							<div class="item_description text-body-sml"> '.$ar['description'].' </div>
-							<div class="item_price"> '.$ar['unit_price'].' </div>
-						</div>
-
-					</div>';
-					}
-					return $ret;
-
-
-				}
-				// $dishes = get_sushi();
-
-				?>
-
-
-				</div>
-				</div>
-
-				<!-- Tempura -->
-				<div class="filterDiv ttempura">
-				<div class="list_title">
-					<h1 class="heading2">Tempura</h1>
-				</div>
-
-				<div class="menu_list grid">
-
-				<?php
-
-
-				function get_tempura(){
-					global $db;
-					$ret = array();
-					$sql = "SELECT * FROM dishes WHERE category='Tempura'";
-					$result = mysqli_query($db, $sql);
-
-					while($ar = mysqli_fetch_assoc($result)){
-						$ret[] = $ar;
-
-
-						echo '
-						<div id="menuItem" class="menu_item">
-
-						<div class="item_image">
-							<img src=" '.$ar['img_path'].' " alt="food image">
-						</div>
-
-						<div class="item_text">
-							<div class="item_name"> '.$ar['name'].' </div>
-							<div class="item_description text-body-sml"> '.$ar['description'].' </div>
-							<div class="item_price"> '.$ar['unit_price'].' </div>
-						</div>
-
-					</div>';
-					}
-					return $ret;
-
-
-				}
-				// $dishes = get_tempura();
-
-				?>
-
-
-				</div>
-				</div>
-
-				<!-- Drinks -->
-				<div class="filterDiv ddrinks">
-				<div class="list_title">
-					<h1 class="heading2">Drinks</h1>
-				</div>
-
-				<div class="menu_list grid">
-
-				<?php
-
-
-				function get_drinks(){
-					global $db;
-					$ret = array();
-					$sql = "SELECT * FROM dishes WHERE category='Drinks'";
-					$result = mysqli_query($db, $sql);
-
-					while($ar = mysqli_fetch_assoc($result)){
-						$ret[] = $ar;
-
-
-						echo '
-						<div id="menuItem" class="menu_item">
-
-						<div class="item_image">
-							<img src=" '.$ar['img_path'].' " alt="food image">
-						</div>
-
-						<div class="item_text">
-							<div class="item_name"> '.$ar['name'].' </div>
-							<div class="item_description text-body-sml"> '.$ar['description'].' </div>
-							<div class="item_price"> '.$ar['unit_price'].' </div>
-						</div>
-
-					</div>';
-					}
-					return $ret;
-
-
-				}
-				// $dishes = get_drinks();
-
-				?>
-
-
-				</div>
-				</div>
-
+				
 			</div>
 
 
-		</section>
+		</section> <!-- end of main -->
 
 	</section>
 
 	<?php include('footer.php'); ?>
 
-	
 
 	<!-- menu item popup modal -->
 
@@ -545,6 +259,7 @@ for (var i = 0; i < btns.length; i++) {
 	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script type="text/javascript" src="js/filter.js"></script>
+	<script type="text/javascript" src="js/like.js"></script>
 
 	<script type="text/javascript">
 		// modal content

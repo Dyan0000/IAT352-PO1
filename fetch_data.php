@@ -26,6 +26,14 @@ if (isset($_POST['action'])) {
 		else $sql .= "AND ";
 		$sql .= "dietary IN ('". $dietary_filter. "') ";
 	}
+
+	if (isset($_POST['category'])) {
+		$category_filter = implode("','", $_POST["category"]);
+		if (strlen($sql) == $length) $sql .= "WHERE ";
+		else $sql .= "AND ";
+		$sql .= "category IN ('". $category_filter. "') ";
+	}
+
 	// echo $sql;
 	$result = mysqli_query($db, $sql);
 	if (!$result) die("!! Database query failed !!");
@@ -43,13 +51,13 @@ if (isset($_POST['action'])) {
 				</div>
 
 				<div class='item_text'>
-					<div class='item_name'>".$row['name']."</div>
+					<div class='item_name' id='dish_name'>".$row['name']."</div>
 					<div class='item_description text-body-sml'>".$row['description']."</div>
-					<div class='item_price'>".$row['unit_price']."</div>
-				</div>
-
-			</div>
-			";
+					<div class='item_price'>".$row['unit_price']."</div>";
+			if (isset($_SESSION['id'])) {
+				$output .= "<div id='item_like'>Like</div>";
+			}		
+			$output .=	"</div></div>";
 		}
 		$output .= "</div>";
 	} else {
