@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 02, 2020 at 09:36 PM
+-- Generation Time: Dec 04, 2020 at 06:38 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -88,13 +88,6 @@ CREATE TABLE `like_dish` (
   `category` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `like_dish`
---
-
-INSERT INTO `like_dish` (`id`, `dish_id`, `category`) VALUES
-(10014, 6, 'Donburi');
-
 -- --------------------------------------------------------
 
 --
@@ -122,13 +115,6 @@ CREATE TABLE `users` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`) VALUES
-(10014, 'Andrew', 'Lee', 'lee@sfu.ca', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
