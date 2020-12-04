@@ -17,13 +17,13 @@ if (isset($_POST['action'])) {
 				$insert_sql .= "VALUES ('". $_SESSION['id']. "', '". $row['dish_id']. "', '". $row['category']. "');";
 				mysqli_query($db, $insert_sql);
 			}
-			echo "Don't Like This";
+			echo "Dislike";
 		} else {
 			// If users don't like this dish any more, remove this data from the like_dish table
 			while ($row = mysqli_fetch_assoc($search_result)) {
 				$delete_sql = "DELETE FROM like_dish WHERE ";
 				$delete_sql .= "id = '". $_SESSION['id']. "' AND dish_id = '". $row['dish_id']."';";
-				echo "Like This";
+				echo "Like";
 			}
 		}
 
