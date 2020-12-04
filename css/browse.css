@@ -237,12 +237,6 @@ img.logo {
 	padding-top:1em;
 }
 
-#item_like{
-	cursor: pointer;
-	text-decoration: underline;
-	color: #231F20;
-}
-
 
 /*styling for popup modal*/
 
@@ -264,8 +258,8 @@ img.logo {
     height: auto;
  
     position: fixed;
-    margin:0 auto;
-    top: 50%; 
+    margin: 0 auto;
+    top: 55%; 
     left: 50%;
     margin-top: -300px;
     margin-left: -250px;
@@ -291,8 +285,16 @@ img.logo {
 	z-index: 12;
 }
 
+.modal_img_box{
+	height: 16em;
+	overflow-y: scroll;
+	margin: 0;
+}
+
 .modal_image{
-	margin:0;
+	/*margin: 0;*/
+	width:100%;
+	display: block;
 }
 
 .modal_title{
@@ -317,15 +319,21 @@ img.logo {
 .modal_control{
 	width:100%;
 	margin-top: 1.5em;
-
 }
 
-.quantity_stepper{
-	width:50%;
-}
+/*.quantity_stepper{
+	width: 50%;
+}*/
 
 .order_bt{
-	width:50%;
+	width: 50%;
+}
+
+.like_dish{
+	cursor: pointer;
+	text-decoration: underline;
+	color: #231F20;
+	text-align: right;
 }
 
 /* Loading Animation */

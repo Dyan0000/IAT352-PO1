@@ -1,21 +1,25 @@
 $(document).ready(function () {
 
   function like_dish(){
-    var dish_name = $('#dish_name').val();
+    // alert("Start to run like_dish() function.");
     var action = 'like_dish';
+    var dish_name = $('.modal_title').text();
+    var if_like = $('.like_dish').text();
+    // alert("dish_name: " + dish_name);
+    // alert("if_like: " + if_like);
     $.ajax({
-      method: "POST",
       url: "like_dish.php",
-      data: {action:action, dish_name:dish_name},
+      method: "POST",
+      data: {action:action, dish_name:dish_name, if_like:if_like},
       success:function(data){
-        $('#like_dish').text("Already Liked");
+        $('.like_dish').html(data);
       }
     });
   }
 
-  $('#item_like').click(function(){
+  $('.like_dish').click(function(){
     like_dish();
-    alert("You clicked 'Like'!");
+    // alert("You clicked 'Like'!");
   });
 
 });

@@ -54,9 +54,9 @@ if (isset($_POST['action'])) {
 					<div class='item_name' id='dish_name'>".$row['name']."</div>
 					<div class='item_description text-body-sml'>".$row['description']."</div>
 					<div class='item_price'>$".$row['unit_price']."</div>";
-			if (isset($_SESSION['id'])) {
-				$output .= "<div id='item_like'>Like</div>";
-			}		
+			// if (isset($_SESSION['id'])) {
+				// $output .= "<div id='item_like'>Like</div>";
+			// }
 			$output .=	"</div></div>";
 		}
 		$output .= "</div>";

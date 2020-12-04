@@ -190,9 +190,7 @@ session_start();
 
 			<span class="close">&times;</span>
 
-
-			<img class="modal_image" src="img/placeholder.png">
-
+			<div class="modal_img_box"><img class="modal_image" src="img/placeholder.png" alt="dish image"></div>
 
 			<div class="modal_body">
 				<div class="modal_title"></div>
@@ -201,15 +199,15 @@ session_start();
 			</div>
 
 			<div class="modal_control">
-
-				<div class="quantity_stepper"></div>
+				<!-- <div class="quantity_stepper"></div> -->
 				<div class="order_bt pr_bt">Order</div>
+				<div class="like_dish">Like This</div>
 			</div>
 
 		</div>
 
+	</div> <!-- end of item_modal -->
 
-	</div>
 
 <script>
 filterSelection("all")
