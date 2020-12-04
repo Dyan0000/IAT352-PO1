@@ -30,6 +30,9 @@ if (isset($_POST['action'])) {
 	} else {
 		die("!! Search query failed !!");
 	}
+
+	mysqli_free_result($search_result);
+	mysqli_close($db);
 }
 
 ?>

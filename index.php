@@ -32,7 +32,7 @@
 	<?php
 	If (isset($_SESSION['id'])) {
 		include('connect.php');
-		$query = "SELECT dishes.img_path, dishes.name FROM dishes ";
+		$query = "SELECT DISTINCT dishes.img_path, dishes.name FROM dishes ";
 		$query .= "INNER JOIN like_dish ON dishes.category = like_dish.category ";
 		$query .= "WHERE like_dish.id = ". $_SESSION['id']. ";";
 		// echo $query;
