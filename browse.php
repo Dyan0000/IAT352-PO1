@@ -35,10 +35,12 @@ session_start();
 					 $result03 = mysqli_query($db,$query03);
 					 while ($row = mysqli_fetch_assoc($result03)) {
 					 	if (!empty($row['category'])) 
-					 		echo "<label><input type='checkbox' class='checkbox-option category' value='". $row['category']. "'>". $row['category']. "</label>";
+					 		echo "<div class='checkbox-container'><label><input type='checkbox' class='checkbox-option category category_style' value='". $row['category']. "'>". $row['category']. "</label></div>";
 					 }
 					?>
 				</div>
+
+			
 
 				
 			</div>
@@ -196,9 +198,13 @@ for (var i = 0; i < btns.length; i++) {
 	<!-- For price range slider -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+
 	<script type="text/javascript" src="js/modal.js"></script>
 	<script type="text/javascript" src="js/filter.js"></script>
 	<script type="text/javascript" src="js/like.js"></script>
+
+
+
 
 </body>
 </html>

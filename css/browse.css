@@ -104,8 +104,36 @@ img.logo {
 
 .categories_container{
 	margin-bottom: 32px;
+	
+
+
 }
 
+
+.category{
+
+}
+
+.checkbox-container{
+	display: inline-block;
+}
+.checkbox-container {
+	padding:1em 2em;
+
+	background-color: #F7f7f7;
+	border:1px solid #e5e5e5;
+	margin:1em;
+	
+}
+.category_style{
+
+	/*display: none;*/
+
+}
+
+.category_style:checked + .checkbox-container label {
+	font-weight: bold;
+}
 
 .container_item{
 	-webkit-flex: 1 1 0;
@@ -118,6 +146,11 @@ img.logo {
 	cursor: pointer;
 
 
+
+}
+
+.checkbox-option{
+	background: black;
 
 }
 
