@@ -201,7 +201,11 @@ session_start();
 			<div class="modal_control">
 				<!-- <div class="quantity_stepper"></div> -->
 				<div class="order_bt pr_bt">Order</div>
-				<div class="like_dish">Like This</div>
+				<?php
+					if (isset($_SESSION['id'])) {
+						echo "<div class='like_dish'>Like This</div>";
+					}
+				?>
 			</div>
 
 		</div>

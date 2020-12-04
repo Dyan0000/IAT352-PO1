@@ -10,7 +10,9 @@ if (isset($_POST['action'])) {
 	
 	if (isset($_POST['minimum_price'], $_POST['maximum_price']) &&
 		!empty($_POST['minimum_price']) && !empty($_POST['maximum_price'])) {
-		$sql .= "WHERE unit_price BETWEEN ".$_POST["minimum_price"]." AND ".$_POST["maximum_price"]." ";
+		if (strlen($sql) == $length) $sql .= "WHERE ";
+		else $sql .= "AND ";
+		$sql .= "unit_price BETWEEN ".$_POST["minimum_price"]." AND ".$_POST["maximum_price"]." ";
 	}
 
 	if (isset($_POST['meat'])) {
